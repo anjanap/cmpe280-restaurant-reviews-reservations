@@ -11,13 +11,13 @@ var signin = require('./routes/signin');
 var signup = require('./routes/signup');
 
 var app = express();
-var MongoClient = require('mongodb').MongoClient;
+/*var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/cmpe280";
 
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     console.log("DB connected");
-});
+});*/
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
