@@ -32,12 +32,12 @@ function signupForm() {
   if(pwd.length<6){
     msg+="Passowrd minimum length should be 6.\n"
   }
-  if(pwd.length<6){
-    msg+="Passowrd minimum length should be 6.\n"
+  if(pwd2.length<6){
+    msg+="Passwords do not match.\n"
   }
   if(pwd!=pwd2)
-    msg+="Passwords do not match!.\n"
-  
+    msg+="Passwords do not match.\n"
+
   if(msg.length>0){
     alert(msg);
     return false;
