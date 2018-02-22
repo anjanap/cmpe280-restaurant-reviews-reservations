@@ -2,15 +2,16 @@
 <html>
   <head>
     <title>CMPE 280</title>
-<link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
-    <script type ="text/javascript" src="validations.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+    <script type="text/javascript" src="validations.js"></script>
   </head>
   <body background="/images/img2.jpg">
+ 
 
 <div class = "active">
   <ul>
       <li><button type="button" onclick="document.getElementById('id01').style.display='block'">Sign Up</button></li>
-      <li><button type="button" onclick="document.getElementById('id01').style.display='block'">Sign In</button></li>
+      <li><button type="button" onclick="document.getElementById('id02').style.display='block'">Sign In</button></li>
   </ul>
 </div>
 
@@ -28,10 +29,45 @@
 <!-- The Modal (contains the Sign Up form) -->
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content" id="signupform" action="/action_page.php" onsubmit="return signupForm()">
     <div class="container">
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
+      <hr>
+
+      <label for="first"><b>First Name</b></label>
+      <input type="text" placeholder="Enter First Name" name="firstname" required>
+
+      <label for="last"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter Last Name" name="lastname" required>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="phone"><b>Phone</b></label>
+      <input type="text" placeholder="Enter Phone" name="phone" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="password-repeat" required>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- The Modal (contains the Sign In form) -->
+<div id="id02" class="modal">
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" id="signinform" action="/action_page.php" onsubmit="return signinForm()">
+    <div class="container">
+      <h1>Sign In</h1>
+      <p>Please fill in this form to Sign in.</p>
       <hr>
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
@@ -39,48 +75,30 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signup">Sign Up</button>
+        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign In</button>
       </div>
     </div>
   </form>
 </div>
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
+    <script>
+    // Get the modal
+    var signup = document.getElementById('id01');
+    var signin = document.getElementById('id02');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == signin) {
+            signin.style.display = "none";
+        }
+
+        if (event.target == signup) {
+            signup.style.display = "none";
+        }
     }
-}
-</script>
-
-<!--<h2>Sign Up</h2>
-    <form name="signupform" action="/signup" method="POST" onsubmit="return signupForm()">
-    	<label>First Name: </label><input type="text" name="firstname" ><br>
-    	<label>Last Name: </label><input type="password" name="lastname"><br>
-      <label>Phone No.: </label><input type="text" name="phone" placeholder="(999) 999-9999"><br>
-      <label>Email: </label><input type="text" name="email"><br>
-      <label>Password: </label><input type="password" name="password"><br>
-    	<input type="submit" name="Signup">
-    </form>
-
-<h2>Sign In</h2>
-    <form name="signinform" action="/signin" method="POST" onsubmit="return signinForm()">
-      <label>Email: </label><input type="text" name="email"><br>
-      <label>Password: </label><input type="password" name="password"><br>
-      <input type="submit" name="Signin">
-    </form>
-
--->
-
-
+    </script>
   </body>
 </html>
+
