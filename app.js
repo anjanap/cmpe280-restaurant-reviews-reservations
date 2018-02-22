@@ -19,9 +19,9 @@ MongoClient.connect(url, function(err, db) {
     console.log("DB connected");
 });*/
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/views'));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -34,6 +34,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/signin',signin.login);
 app.use('/signup',signup.signup);
+
 
 
 // catch 404 and forward to error handler
