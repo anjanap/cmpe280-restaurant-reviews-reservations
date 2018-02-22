@@ -1,9 +1,10 @@
 function signupForm() {
-  var fn=document.signupform.firstname.value;
-  var ln=document.signupform.lastname.value;
-  var em=document.signupform.email.value;
-  var pwd=document.signupform.password.value;
-  var phn=document.signupform.phone.value;
+  var fn=document.forms["signupform"]["firstname"].value;
+  var ln=document.forms["signupform"]["lastname"].value;
+  var em=document.forms["signupform"]["email"].value;
+  var pwd=document.forms["signupform"]["password"].value;
+  var pwd2=document.forms["signupform"]["password-repeat"].value;
+  var phn=document.forms["signupform"]["phone"].value;
   var regEm=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   var regPh=/^\(\d{3}\) *\d{3}-\d{4}$/;
   var msg="";
@@ -31,6 +32,12 @@ function signupForm() {
   if(pwd.length<6){
     msg+="Passowrd minimum length should be 6.\n"
   }
+  if(pwd.length<6){
+    msg+="Passowrd minimum length should be 6.\n"
+  }
+  if(pwd!=pwd2)
+    msg+="Passwords do not match!.\n"
+  
   if(msg.length>0){
     alert(msg);
     return false;
@@ -38,8 +45,8 @@ function signupForm() {
 }
 
 function signinForm() {
-  var em=document.signinform.email.value;
-  var pwd=document.signinform.password.value;
+  var em=document.forms["signinform"]["email"].value;
+  var pwd=document.forms["signinform"]["psw"].value;
   var msg="";
   if (em == "") {
     msg+="Email is required.\n"
@@ -49,5 +56,9 @@ function signinForm() {
   }
   if(pwd.length<6){
     msg+="Passowrd minimum length should be 6.\n"
+  }
+  if(msg.length>0){
+    alert(msg);
+    return false;
   }
 }
