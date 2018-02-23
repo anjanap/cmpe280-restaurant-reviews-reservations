@@ -21,7 +21,7 @@ MongoClient.connect(url, function(err, db) {
 });
 //view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('html', engines.mustache);
+//app.engine('html', engines.mustache);
 app.set('view engine', 'html');
 app.use(express.static(__dirname + '/views'));
 // uncomment after placing your favicon in /public
