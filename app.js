@@ -22,6 +22,7 @@ MongoClient.connect(url, function(err, db) {
 //view engine setup
 app.set('views', path.join(__dirname, 'views'));
 //app.engine('html', engines.mustache);
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(express.static(__dirname + '/views'));
 // uncomment after placing your favicon in /public
@@ -54,7 +55,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error.html');
 });
 
 module.exports = app;

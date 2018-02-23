@@ -34,7 +34,7 @@ function register(req,res){
   var firstname = req.body.firstname;
   var lastname = req.body.lastname;
   console.log("From html: "+email);
-  /*MongoClient.connect(url, function(err, db) {
+  MongoClient.connect(url, function(err, db) {
       if (err) throw err;
       var dbo = db.db("cmpe280");
       var myobj = { email: email, password: password , firstname: firstname, lastname:lastname};
@@ -44,7 +44,7 @@ function register(req,res){
           db.close();
       });
 
-});*/
-res.sendFile('../views/success.html',{status:'Successful'});
+});
+res.render('../views/success.html');
 }//function
 exports.signup=register;
