@@ -98,9 +98,9 @@ button {
   opacity: 0.9;
 }
 
-button:hover {
-  opacity:1;
-}
+/*button:hover {*/
+  /*opacity:1;*/
+/*}*/
 
 /* Extra styles for the cancel button */
 .cancelbtn {

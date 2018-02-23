@@ -4,14 +4,22 @@
     <title>CMPE 280</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
     <script type="text/javascript" src="validations.js"></script>
+      <script type="text/javascript" src="userinteractivity.js"></script>>
+
   </head>
   <body background="/images/img5.jpg">
 
 
 <div class = "active">
   <ul>
-      <li><button type="button" onclick="document.getElementById('id01').style.display='block'">Sign Up</button></li>
-      <li><button type="button" onclick="document.getElementById('id02').style.display='block'">Sign In</button></li>
+      <li><button id = "b1" type="button"
+                  onmouseover="mouseOver()"
+                  onmouseout="mouseOut()"
+                  onclick="document.getElementById('id01').style.display='block'">Sign Up</button></li>
+      <li><button id = "b2" type="button"
+                  onmouseover="mouseOver1()"
+                  onmouseout="mouseOut1()"
+                  onclick="document.getElementById('id02').style.display='block'">Sign In</button></li>
   </ul>
 </div>
 
@@ -52,8 +60,16 @@
       <input type="password" placeholder="Repeat Password" name="password-repeat">
 
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
+        <button type="button"
+                id = "b3"
+                onmouseover="mouseOver2()"
+                onmouseout="mouseOut2()"
+                onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit"
+                id = "b4"
+                onmouseover="mouseOver3()"
+                onmouseout="mouseOut3()"
+                class="signupbtn">Sign Up</button>
       </div>
     </div>
   </form>
@@ -74,8 +90,16 @@
       <input type="password" placeholder="Enter Password" name="password">
 
       <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign In</button>
+        <button type="button"
+                id = "b5"
+                onmouseover="mouseOver4()"
+                onmouseout="mouseOut4()"
+                onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit"
+                id = "b6"
+                onmouseover="mouseOver5()"
+                onmouseout="mouseOut5()"
+                class="signupbtn">Sign In</button>
       </div>
     </div>
   </form>
