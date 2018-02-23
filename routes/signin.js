@@ -28,8 +28,9 @@ module.exports = router;
 function check(req,res){
 
   var email = req.body.email;
-  var password = req.body.password;
-console.log("USERNAME: "+email);
+    var password = req.body.password;
+console.log("email: "+email);
+    console.log("password: "+password);
 
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
@@ -37,9 +38,11 @@ console.log("USERNAME: "+email);
         dbo.collection("users").findOne({email: email, password: password}, function(err, result) {
             if (err) throw err;
            if(result)
-            res.render('home.ejs');
+            res.render('../views/success.html');
+               //res.send("IN");
             else
-                res.send("User Not found");
+                res.render('../views/error.html');
+               //res.send("NOPE");
             db.close();
         });
     });
