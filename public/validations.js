@@ -46,7 +46,7 @@ function signupForm() {
 
 function signinForm() {
   var em=document.forms["signinform"]["email"].value;
-  var pwd=document.forms["signinform"]["psw"].value;
+  var pwd=document.forms["signinform"]["password"].value;
   var msg="";
   if (em == "") {
     msg+="Email is required.\n"
