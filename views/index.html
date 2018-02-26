@@ -5,13 +5,23 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
     <script type="text/javascript" src="validations.js"></script>
       <script type="text/javascript" src="userinteractivity.js"></script>>
+      <script type="text/javascript" src="modal.js"></script>
 
   </head>
   <body background="/images/img5.jpg">
 
+<div class="sidenav" 
+style = "background-color: #111111 ;position: fixed;width: 160px; height: 100%;">
+  <a href="#services">Services</a>
+  <a href="#services">About</a>
+  <a href="#services">Contact Us</a>
+  <a href="#clients">Business</a>
+  <a href="#contact">Blog</a>
+</div>
 
 <div class = "active">
   <ul>
+    <li><h2 style = "float:left; color: #0897"></h2></li>
       <li><button id = "b1" type="button"
                   onmouseover="mouseOver()"
                   onmouseout="mouseOut()"
@@ -104,22 +114,5 @@
     </div>
   </form>
 </div>
-
-    <script>
-    // Get the modal
-    var signup = document.getElementById('id01');
-    var signin = document.getElementById('id02');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == signin) {
-            signin.style.display = "none";
-        }
-
-        if (event.target == signup) {
-            signup.style.display = "none";
-        }
-    }
-    </script>
   </body>
 </html>
