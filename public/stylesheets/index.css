@@ -1,6 +1,7 @@
 body {margin:0;}
 
 ul {
+  height: 57px;
     list-style-type: none;
     margin: 0;
     padding: 0;
