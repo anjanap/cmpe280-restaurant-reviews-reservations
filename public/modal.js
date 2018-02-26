@@ -11,3 +11,15 @@ var signin = document.getElementById('id02');
             signup.style.display = "none";
         }
       }
+
+
+function w3_open() {
+    if(document.getElementById("mySidebar").style.display == "none")
+        document.getElementById("mySidebar").style.display = "block";
+    else
+        document.getElementById("mySidebar").style.display = "none";
+}
+
+function loadfirst() {
+    document.getElementById("mySidebar").style.display = "none";
+}

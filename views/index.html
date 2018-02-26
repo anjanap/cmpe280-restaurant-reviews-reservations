@@ -3,32 +3,33 @@
   <head>
     <title>CMPE 280</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script type="text/javascript" src="validations.js"></script>
       <script type="text/javascript" src="userinteractivity.js"></script>>
       <script type="text/javascript" src="modal.js"></script>
-
   </head>
-  <body background="/images/img5.jpg">
+  <body onload="loadfirst()" background="/images/img5.jpg" >
 
-<div class="sidenav"
+<div class="sidenav" id="mySidebar"
 style = "background-color: #111111 ;position: fixed;width: 160px; height: 100%;">
-  <a id="sideNav0" href="#services" onmouseover="mouseOverSideNav(0)" onmouseout="mouseOutSideNav(0)">Services</a>
-  <a id="sideNav1" href="#about" onmouseover="mouseOverSideNav(1)" onmouseout="mouseOutSideNav(1)">About</a>
-  <a id="sideNav2" href="#contact" onmouseover="mouseOverSideNav(2)" onmouseout="mouseOutSideNav(2)">Contact Us</a>
-  <a id="sideNav3" href="#business" onmouseover="mouseOverSideNav(3)" onmouseout="mouseOutSideNav(3)">Business</a>
-  <a id="sideNav4" href="#blog" onmouseover="mouseOverSideNav(4)" onmouseout="mouseOutSideNav(4)">Blog</a>
+    <a id="sideNav1" href="#about" onmouseover="mouseOverSideNav(1)" onmouseout="mouseOutSideNav(1)">About</a>
+    <a id="sideNav2" href="#contact" onmouseover="mouseOverSideNav(2)" onmouseout="mouseOutSideNav(2)">Contact Us</a>
+    <a id="sideNav3" href="#business" onmouseover="mouseOverSideNav(3)" onmouseout="mouseOutSideNav(3)">Business</a>
+    <a id="sideNav4" href="#blog" onmouseover="mouseOverSideNav(4)" onmouseout="mouseOutSideNav(4)">Blog</a>
 </div>
 
 <div class = "active">
   <ul>
-    <li style="float: left;margin-left: 700px">
-      <center><h3 style = "color:white">foodster</h3></center>
+      <li style="float: left;"><button  style="float: left;" onclick="w3_open()">&#9776;</button></li>
+    <li style="float: left; margin-left: 700px">
+      <h3 style = "color:white">foodster</h3>
     </li>
-      <li><button id = "b1" type="button"
+
+      <li style="float: right;"><button id = "b1" type="button"
                   onmouseover="mouseOver()"
                   onmouseout="mouseOut()"
                   onclick="document.getElementById('id01').style.display='block'">Sign Up</button></li>
-      <li><button id = "b2" type="button"
+      <li style="float: right;"s><button id = "b2" type="button"
                   onmouseover="mouseOver1()"
                   onmouseout="mouseOut1()"
                   onclick="document.getElementById('id02').style.display='block'">Sign In</button></li>
