@@ -10,3 +10,4 @@ var signin = document.getElementById('id02');
         if (event.target == signup) {
             signup.style.display = "none";
         }
+      }
