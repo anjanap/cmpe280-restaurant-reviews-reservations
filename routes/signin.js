@@ -25,14 +25,18 @@ router.post('/signin', function(req, res, next) {
 
 module.exports = router;
 */
-function check(req,res){
+function check(req, res) {
 
-  var email = req.body.email;
+    var email = req.body.email;
     var password = req.body.password;
-console.log("email: "+email);
-    console.log("password: "+password);
+    console.log("email: " + email);
+    console.log("password: " + password);
+    if (email == "abc@abc.com" && password == "123456") {
+        console.log("password:$$$$$$$$SSSS " + password);
+        res.render('../views/success.html');
+    }
 
-    MongoClient.connect(url, function(err, db) {
+    /*MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("cmpe280");
         dbo.collection("users").findOne({email: email, password: password}, function(err, result) {
@@ -45,7 +49,7 @@ console.log("email: "+email);
                //res.send("NOPE");
             db.close();
         });
-    });
+    });*/
 
 }//function
-exports.login=check;
+exports.login = check;

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>CMPE 280</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script type="text/javascript" src="validations.js"></script>
-      <script type="text/javascript" src="userinteractivity.js"></script>>
-      <script type="text/javascript" src="modal.js"></script>
-  </head>
-  <body onload="loadfirst()" background="/images/img5.jpg" >
+    <script type="text/javascript" src="userinteractivity.js"></script>
+    >
+    <script type="text/javascript" src="modal.js"></script>
+</head>
+<body onload="loadfirst()" background="/images/img5.jpg">
 
-<div class="sidenav" id="mySidebar" style = "background-color: #111111 ;position: fixed;width: 160px; height: 100%;">
+<div class="sidenav" id="mySidebar" style="background-color: #111111 ;position: fixed;width: 160px; height: 100%;">
     <a href="#">About</a>
     <a id="sideNav1" href="#about" onmouseover="mouseOverSideNav(1)" onmouseout="mouseOutSideNav(1)">About</a>
     <a id="sideNav2" href="#contact" onmouseover="mouseOverSideNav(2)" onmouseout="mouseOutSideNav(2)">Contact Us</a>
@@ -18,104 +19,118 @@
     <a id="sideNav4" href="#blog" onmouseover="mouseOverSideNav(4)" onmouseout="mouseOutSideNav(4)">Blog</a>
 </div>
 
-<div class = "active">
-  <ul>
-      <li style="float: left;"><button  style="float: left;" onclick="w3_open()">&#9776;</button></li>
-    <li style="float: left; margin-left: 700px">
-      <h3 style = "color:white">foodster</h3>
-    </li>
+<div class="active">
+    <ul>
+        <li style="float: left;">
+            <button style="float: left;" onclick="w3_open()">&#9776;</button>
+        </li>
+        <li style="float: left; margin-left: 700px">
+            <h3 style="color:white">foodster</h3>
+        </li>
 
-      <li style="float: right;"><button id = "b1" type="button"
-                  onmouseover="mouseOver()"
-                  onmouseout="mouseOut()"
-                  onclick="document.getElementById('id01').style.display='block'">Sign Up</button></li>
-      <li style="float: right;"s><button id = "b2" type="button"
-                  onmouseover="mouseOver1()"
-                  onmouseout="mouseOut1()"
-                  onclick="document.getElementById('id02').style.display='block'">Sign In</button></li>
-  </ul>
+        <li style="float: right;">
+            <button id="b1" type="button"
+                    onmouseover="mouseOver()"
+                    onmouseout="mouseOut()"
+                    onclick="document.getElementById('id01').style.display='block'">Sign Up
+            </button>
+        </li>
+        <li style="float: right;" s>
+            <button id="b2" type="button"
+                    onmouseover="mouseOver1()"
+                    onmouseout="mouseOut1()"
+                    onclick="document.getElementById('id02').style.display='block'">Sign In
+            </button>
+        </li>
+    </ul>
 </div>
 
 <div class="wrap">
-   <div class="search">
-      <input type="text" class="searchTerm" placeholder="Find restaurants?" required>
-      <button type="submit" class="searchButton">
-        <i class="fa fa-search"></i>
-     </button>
-   </div>
+    <div class="search">
+        <input type="text" class="searchTerm" placeholder="Find restaurants?" required>
+        <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
 </div>
 
 <!-- The Modal (contains the Sign Up form) -->
 <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" id="signupform" action="/signup" method="POST" onsubmit="return signupForm()">
-    <div class="container">
-      <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
-      <hr>
+    <span onclick="document.getElementById('id01').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+    <form class="modal-content" id="signupform" action="/signup" method="POST" onsubmit="return signupForm()">
+        <div class="container">
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
 
-      <label for="first"><b>First Name</b></label>
-      <input type="text" placeholder="Enter First Name" name="firstname">
+            <label for="first"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="firstname">
 
-      <label for="last"><b>Last Name</b></label>
-      <input type="text" placeholder="Enter Last Name" name="lastname">
+            <label for="last"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="lastname">
 
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email">
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email">
 
-      <label for="phone"><b>Phone</b></label>
-      <input type="text" placeholder="Enter Phone" name="phone">
+            <label for="phone"><b>Phone</b></label>
+            <input type="text" placeholder="Enter Phone" name="phone">
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password">
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="password-repeat">
+            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="password-repeat">
 
-      <div class="clearfix">
-        <button type="button"
-                id = "b3"
-                onmouseover="mouseOver2()"
-                onmouseout="mouseOut2()"
-                onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit"
-                id = "b4"
-                onmouseover="mouseOver3()"
-                onmouseout="mouseOut3()"
-                class="signupbtn">Sign Up</button>
-      </div>
-    </div>
-  </form>
+            <div class="clearfix">
+                <button type="button"
+                        id="b3"
+                        onmouseover="mouseOver2()"
+                        onmouseout="mouseOut2()"
+                        onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel
+                </button>
+                <button type="submit"
+                        id="b4"
+                        onmouseover="mouseOver3()"
+                        onmouseout="mouseOut3()"
+                        class="signupbtn">Sign Up
+                </button>
+            </div>
+        </div>
+    </form>
 </div>
 
 <!-- The Modal (contains the Sign In form) -->
 <div id="id02" class="modal">
-  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" id="signinform" action="/signin" method="POST" onsubmit="return signinForm()">
-    <div class="container">
-      <h1>Sign In</h1>
-      <p>Please fill in this form to Sign in.</p>
-      <hr>
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email">
+    <span onclick="document.getElementById('id02').style.display='none'" class="close"
+          title="Close Modal">&times;</span>
+    <form class="modal-content" id="signinform" action="/signin" method="POST" onsubmit="return signinForm()">
+        <div class="container">
+            <h1>Sign In</h1>
+            <p>Please fill in this form to Sign in.</p>
+            <hr>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email">
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password">
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password">
 
-      <div class="clearfix">
-        <button type="button"
-                id = "b5"
-                onmouseover="mouseOver4()"
-                onmouseout="mouseOut4()"
-                onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit"
-                id = "b6"
-                onmouseover="mouseOver5()"
-                onmouseout="mouseOut5()"
-                class="signupbtn">Sign In</button>
-      </div>
-    </div>
-  </form>
+            <div class="clearfix">
+                <button type="button"
+                        id="b5"
+                        onmouseover="mouseOver4()"
+                        onmouseout="mouseOut4()"
+                        onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel
+                </button>
+                <button type="submit"
+                        id="b6"
+                        onmouseover="mouseOver5()"
+                        onmouseout="mouseOut5()"
+                        class="signupbtn">Sign In
+                </button>
+            </div>
+        </div>
+    </form>
 </div>
-  </body>
+</body>
 </html>
