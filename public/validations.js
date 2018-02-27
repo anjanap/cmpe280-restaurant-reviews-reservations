@@ -39,13 +39,14 @@ function signupForm() {
         msg += "Passwords do not match.\n"
 
     if (msg.length > 0) {
-        alert(msg);
-        return false;
-    }
+}
+alert(msg);
+return false;
 }
 
 function signinForm() {
     var em = document.forms["signinform"]["email"].value;
+    var regEm = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var pwd = document.forms["signinform"]["password"].value;
     var msg = "";
     if (em == "") {
@@ -53,6 +54,9 @@ function signinForm() {
     }
     if (pwd == "") {
         msg += "Passowrd is required.\n"
+    }
+    if (!regEm.test(em)) {
+        msg += "Email format incorrect.\n"
     }
     if (pwd.length < 6) {
         msg += "Passowrd minimum length should be 6.\n"

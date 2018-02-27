@@ -35,6 +35,10 @@ function check(req, res) {
         console.log("password:$$$$$$$$SSSS " + password);
         res.render('../views/success.html');
     }
+    else{
+        res.render('../views/error.html');
+    }
+
 
     /*MongoClient.connect(url, function(err, db) {
         if (err) throw err;

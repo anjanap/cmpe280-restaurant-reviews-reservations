@@ -34,16 +34,19 @@ function register(req, res) {
     var lastname = req.body.lastname;
     console.log("From html: " + email);
     MongoClient.connect(url, function (err, db) {
-        if (err) throw err;
-        var dbo = db.db("cmpe280");
-        var myobj = {email: email, password: password, firstname: firstname, lastname: lastname};
-        dbo.collection("users").insertOne(myobj, function (err, res) {
-            if (err) throw err;
-            console.log("1 user created");
-            db.close();
-        });
+        if (err)
+            res.render('../views/dberror.html');
+        else{        var dbo = db.db("cmpe280");
+            var myobj = {email: email, password: password, firstname: firstname, lastname: lastname};
+            dbo.collection("users").insertOne(myobj, function (err, resp) {
+                if (err) throw err;
+                console.log("1 user created");
+                db.close();
+                res.render('../views/success.html');
+            });}
+
 
     });
-    res.render('../views/success.html');
+
 }//function
 exports.signup = register;
