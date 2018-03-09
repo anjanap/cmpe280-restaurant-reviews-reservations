@@ -6,8 +6,45 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script type="text/javascript" src="validations.js"></script>
     <script type="text/javascript" src="userinteractivity.js"></script>
-    >
     <script type="text/javascript" src="modal.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+
+        $( function() {
+            var availableTags = [
+                "San Jose",
+                "San Fransisco",
+                "New York",
+                "New Jersey",
+                "Chicago"
+            ];
+            $( "#tags" ).autocomplete({
+                source: availableTags
+//                appendTo: '#div',
+//                open: function() { $('#div .ui-menu').width(30) }
+            });
+        } );
+
+        $.extend($.ui.autocomplete.prototype.options, {
+            open: function(event, ui) {
+                $(this).autocomplete("widget").css({
+                    "width": ($(this).width() + "px")
+                });
+            }
+        });
+
+        $( function() {
+            $( document ).tooltip();
+        } );
+    </script>
+
 </head>
 <body onload="loadfirst()" background="/images/img5.jpg">
 
@@ -47,8 +84,10 @@
 
 <div class="wrap">
     <div class="search">
-        <input type="text" class="searchTerm" placeholder="Find restaurants?" required>
+        <input type="text" class="searchTerm" placeholder="Find restaurants" required>
+        <input type="text" id="tags" class="searchCity" placeholder="City" required>
         <button type="submit" class="searchButton">
+            Submit
             <i class="fa fa-search"></i>
         </button>
     </div>
@@ -65,22 +104,25 @@
             <hr>
 
             <label for="first"><b>First Name</b></label>
-            <input type="text" placeholder="Enter First Name" name="firstname">
+            <input type="text" placeholder="Enter First Name" name="firstname" title="Enter your first name">
 
             <label for="last"><b>Last Name</b></label>
-            <input type="text" placeholder="Enter Last Name" name="lastname">
+            <input type="text" placeholder="Enter Last Name" name="lastname" title="Enter your last name">
 
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email">
+            <input type="text" placeholder="Enter Email" name="email" title="Enter your Email address. Format: xxx@xxx.com">
 
             <label for="phone"><b>Phone</b></label>
-            <input type="text" placeholder="Enter Phone" name="phone">
+            <input type="text" placeholder="Enter Phone" name="phone" title="Enter your Phone Number. Format: (000) 000-0000">
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password">
+            <input type="password" placeholder="Enter Password" name="password" title="Enter your unique password">
 
             <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="password-repeat">
+            <input type="password" placeholder="Repeat Password" name="password-repeat" title="Enter that same password again">
+
+            <label for="birthdate"><b>Date of Birth</b></label>
+            <input type="text" id="datepicker" name="birthdate" title="Enter your birth date">
 
             <div class="clearfix">
                 <button type="button"
@@ -110,10 +152,10 @@
             <p>Please fill in this form to Sign in.</p>
             <hr>
             <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email">
+            <input type="text" placeholder="Enter Email" name="email" title="Enter your Email address. Format: xxx@xxx.com">
 
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="password">
+            <input type="password" placeholder="Enter Password" name="password"  title="Enter your unique password">
 
             <div class="clearfix">
                 <button type="button"
