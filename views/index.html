@@ -3,6 +3,7 @@
 <head>
     <title>CMPE 280</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script type="text/javascript" src="validations.js"></script>
     <script type="text/javascript" src="userinteractivity.js"></script>
@@ -11,8 +12,19 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
 
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css
+       " rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script>
+       $(function() {
+          $( "#tabs-1" ).tabs();
+       });
+    </script>
+
+    <script>
         $( function() {
             $( "#datepicker" ).datepicker();
         } );
@@ -44,6 +56,50 @@
             $( document ).tooltip();
         } );
     </script>
+
+
+    <style>
+       #tabs-1{font-size: 14px;}
+
+       .ui-tabs {
+       position: absolute;
+       padding: .2em;
+       left: 1%;
+       width: 98%;
+       height: auto;
+       top: 15%;
+       }
+
+       #tabs-1 .ui-tabs-nav {
+            height: 2.60em;
+            text-align: center;
+            top: 14%;
+            width:98%;
+            right: 15px;
+        }
+      #tabs-1 .ui-tabs-nav li {
+           display: inline-block;
+           float: none;
+           top: 0px;
+           margin: 0em;
+           padding-bottom: 0px;
+       }
+
+       .ui-widget-header {
+          border: 1px solid #b9cd6d;
+          color: #FFFFFF;
+          font-weight: bold;
+       }
+
+       .ui-tabs .ui-tabs-panel{
+       background:#FFFFFF;
+       }
+       .ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+       width:450px;
+       }
+
+    </style>
+
 
 </head>
 <body onload="loadfirst()" background="/images/img5.jpg">
@@ -91,6 +147,14 @@
             <i class="fa fa-search"></i>
         </button>
     </div>
+</div>
+
+<div  id = "tabs-1">
+   <ul>
+      <li><a href = "tabpages/searchtab.html">Search</a></li>
+      <li><a href = "tabpages/reviewtab.html">Review</a></li>
+      <li><a href = "tabpages/reservetab.html">Reserve</a></li>
+   </ul>
 </div>
 
 <!-- The Modal (contains the Sign Up form) -->
