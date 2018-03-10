@@ -8,15 +8,14 @@
   <meta charset="utf-8">
   <title>droppable demo</title>
   <style>
-  #gallery { float: left; width: 65%; min-height: 12em; }
+  #gallery { float: left; width: 65%; min-height: 12em; position:absolute;}
   .gallery.custom-state-active { background: #ffffff; }
   .gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
   .gallery li h6 { margin: 0 0 0.4em; cursor: move; }
 
 
-  #trash { float: right; width: 32%; min-height: 10em; padding: 1%; background: #ffffff;}
-  #trash h4 { line-height: 16px; margin: 0 0 0.4em; }
-  #trash h4 .ui-icon { float: right; }
+  #trash { float: left; width: 32%; min-height: 10em; padding: 1%; background: #ffffff;position: relative;top: 213px;}
+  #trash h4 { line-height: 32px; margin: 0 0 0.6em; }
   #trash .gallery h6 { margin: 0 0 0.4em; cursor: move; }
   </style>
 <script type="text/javascript">
@@ -95,7 +94,7 @@ $( function() {
   });
 </script>
 </head>
-<body>
+<body background="/images/img5.jpg">
 <div class="ui-widget ui-helper-clearfix">
 <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
   <li class="ui-widget-content ui-corner-tr" >
