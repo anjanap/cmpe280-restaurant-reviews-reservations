@@ -39,9 +39,9 @@ function signupForm() {
         msg += "Passwords do not match.\n"
 
     if (msg.length > 0) {
-alert(msg);
-return false;
-}
+        alert(msg);
+        return false;
+    }
 }
 
 function signinForm() {
