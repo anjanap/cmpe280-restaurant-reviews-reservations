@@ -5,6 +5,10 @@
 <!doctype html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 74b74892042d0b3b68f62a84dd9a3ba965d21b5b
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
     <meta charset="utf-8">
     <title>droppable demo</title>
@@ -94,6 +98,78 @@
                 });
             }
 
+<<<<<<< HEAD
+=======
+=======
+  <meta charset="utf-8">
+  <title>droppable demo</title>
+  <style>
+  #gallery { float: left; width: 65%; min-height: 12em; position:absolute;}
+  .gallery.custom-state-active { background: #ffffff; }
+  .gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+  .gallery li h6 { margin: 0 0 0.4em; cursor: move; }
+
+
+  #trash { float: left; width: 32%; min-height: 10em; padding: 1%; background: #ffffff;position: relative;top: 213px;}
+  #trash h4 { line-height: 32px; margin: 0 0 0.6em; }
+  #trash .gallery h6 { margin: 0 0 0.4em; cursor: move; }
+  </style>
+<script type="text/javascript">
+$( function() {
+ 
+    // There's the gallery and the trash
+    var $gallery = $( "#gallery" ),
+      $trash = $( "#trash" );
+ 
+    // Let the gallery items be draggable
+    $( "li", $gallery ).draggable({
+      revert: "invalid", // when not dropped, the item will revert back to its initial position
+      containment: "document",
+      helper: "clone",
+      cursor: "move"
+    });
+
+    $( "#trash" ).resizable({
+      animate: true
+    });
+
+ 
+    // Let the trash be droppable, accepting the gallery items
+    $trash.droppable({
+      accept: "#gallery > li",
+      classes: {
+        "ui-droppable-active": "ui-state-highlight"
+      },
+      drop: function( event, ui ) {
+        deleteImage( ui.draggable );
+      }
+    });
+ 
+    // Let the gallery be droppable as well, accepting items from the trash
+    $gallery.droppable({
+      accept: "#trash li",
+      classes: {
+        "ui-droppable-active": "custom-state-active"
+      },
+      drop: function( event, ui ) {
+        recycleImage( ui.draggable );
+      }
+    });
+ 
+    // Image deletion function
+    function deleteImage( $item ) {
+      $item.fadeOut(function() {
+        var $list = $( "ul", $trash ).length ?
+          $( "ul", $trash ) :
+          $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $trash );
+ 
+        $item.appendTo( $list ).fadeIn(function() {
+          $item
+            .animate({ width: "48px" })
+            .find( "img" )
+              .animate({ height: "36px" });
+>>>>>>> 3b13148bc4aa17d87e8ec7188ef37a691bb40ee6
+>>>>>>> 74b74892042d0b3b68f62a84dd9a3ba965d21b5b
         });
     </script>
 </head>
