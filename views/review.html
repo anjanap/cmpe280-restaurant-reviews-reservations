@@ -5,133 +5,154 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>droppable demo</title>
-  <style>
-  #gallery { float: left; width: 65%; min-height: 12em; }
-  .gallery.custom-state-active { background: #ffffff; }
-  .gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
-  .gallery li h6 { margin: 0 0 0.4em; cursor: move; }
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <meta charset="utf-8">
+    <title>droppable demo</title>
+    <style>
+        #gallery { float: left; width: 65%; min-height: 12em;position: relative; top: 93px ;
+            background: transparent;}
+        .gallery.custom-state-active { }
+        .gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+        .gallery li h6 { margin: 0 0 0.4em; cursor: move; }
 
 
-  #trash { float: right; width: 32%; min-height: 10em; padding: 1%; background: #ffffff;}
-  #trash h4 { line-height: 16px; margin: 0 0 0.4em; }
-  #trash h4 .ui-icon { float: right; }
-  #trash .gallery h6 { margin: 0 0 0.4em; cursor: move; }
-  </style>
-<script type="text/javascript">
-$( function() {
- 
-    // There's the gallery and the trash
-    var $gallery = $( "#gallery" ),
-      $trash = $( "#trash" );
- 
-    // Let the gallery items be draggable
-    $( "li", $gallery ).draggable({
-      revert: "invalid", // when not dropped, the item will revert back to its initial position
-      containment: "document",
-      helper: "clone",
-      cursor: "move"
-    });
+        #trash { float: left; width: 32%; min-height: 10em; padding: 1%; background: #ffffff; position: absolute ;top: 376px}
+        #trash h4 { line-height: 16px; margin: 0 0 0.6em; }
+        #trash h4 .ui-icon { float: left; }
+        #trash .gallery h6 { margin: 0 0 0.4em; cursor: move; }
+    </style>
+    <script type="text/javascript">
+        $( function() {
 
-    $( "#trash" ).resizable({
-      animate: true
-    });
+            // There's the gallery and the trash
+            var $gallery = $( "#gallery" ),
+                $trash = $( "#trash" );
 
- 
-    // Let the trash be droppable, accepting the gallery items
-    $trash.droppable({
-      accept: "#gallery > li",
-      classes: {
-        "ui-droppable-active": "ui-state-highlight"
-      },
-      drop: function( event, ui ) {
-        deleteImage( ui.draggable );
-      }
-    });
- 
-    // Let the gallery be droppable as well, accepting items from the trash
-    $gallery.droppable({
-      accept: "#trash li",
-      classes: {
-        "ui-droppable-active": "custom-state-active"
-      },
-      drop: function( event, ui ) {
-        recycleImage( ui.draggable );
-      }
-    });
- 
-    // Image deletion function
-    function deleteImage( $item ) {
-      $item.fadeOut(function() {
-        var $list = $( "ul", $trash ).length ?
-          $( "ul", $trash ) :
-          $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $trash );
- 
-        $item.appendTo( $list ).fadeIn(function() {
-          $item
-            .animate({ width: "48px" })
-            .find( "img" )
-              .animate({ height: "36px" });
+            // Let the gallery items be draggable
+            $( "li", $gallery ).draggable({
+                revert: "invalid", // when not dropped, the item will revert back to its initial position
+                containment: "document",
+                helper: "clone",
+                cursor: "move"
+            });
+
+            $( "#trash" ).resizable({
+                animate: true
+            });
+
+
+            // Let the trash be droppable, accepting the gallery items
+            $trash.droppable({
+                accept: "#gallery > li",
+                classes: {
+                    "ui-droppable-active": "ui-state-highlight"
+                },
+                drop: function( event, ui ) {
+                    deleteImage( ui.draggable );
+                }
+            });
+
+            // Let the gallery be droppable as well, accepting items from the trash
+            $gallery.droppable({
+                accept: "#trash li",
+                classes: {
+                    "ui-droppable-active": "custom-state-active"
+                },
+                drop: function( event, ui ) {
+                    recycleImage( ui.draggable );
+                }
+            });
+
+            // Image deletion function
+            function deleteImage( $item ) {
+                $item.fadeOut(function() {
+                    var $list = $( "ul", $trash ).length ?
+                        $( "ul", $trash ) :
+                        $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $trash );
+
+                    $item.appendTo( $list ).fadeIn(function() {
+                        $item
+                            .animate({ width: "48px" })
+                            .find( "img" )
+                            .animate({ height: "36px" });
+                    });
+                });
+            }
+
+            function recycleImage( $item ) {
+                $item.fadeOut(function() {
+                    $item
+                        .find( "a.ui-icon-refresh" )
+                        .remove()
+                        .end()
+                        .css( "width", "96px")
+                        .find( "img" )
+                        .css( "height", "72px" )
+                        .end()
+                        .appendTo( $gallery )
+                        .fadeIn();
+                });
+            }
+
         });
-      });
-    }
- 
-    function recycleImage( $item ) {
-      $item.fadeOut(function() {
-        $item
-          .find( "a.ui-icon-refresh" )
-            .remove()
-          .end()
-          .css( "width", "96px")
-          .find( "img" )
-            .css( "height", "72px" )
-          .end()
-          .appendTo( $gallery )
-          .fadeIn();
-      });
-    }
- 
-  });
-</script>
+    </script>
 </head>
-<body>
+<body background="/images/img5.jpg">
 <div class="ui-widget ui-helper-clearfix">
-<ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
-  <li class="ui-widget-content ui-corner-tr" >
-    <h6 class="ui-widget-header " >#goodfood</h6>
-  </li>
-  <li class="ui-widget-content ui-corner-tr">
-    <h6 class="ui-widget-header">#awesome</h6>
-  </li>
-  <li class="ui-widget-content ui-corner-tr">
-    <h6 class="ui-widget-header">#disappointed</h6>
-  </li>
-  <li class="ui-widget-content ui-corner-tr">
-    <h6 class="ui-widget-header">#average</h6>
-  </li>
-  <li class="ui-widget-content ui-corner-tr">
-    <h6 class="ui-widget-header">#fastfood</h6>
-  </li>
-  <li class="ui-widget-content ui-corner-tr">
-    <h6 class="ui-widget-header">#overpriced</h6>
-  </li>
-  <li class="ui-widget-content ui-corner-tr">
-    <h6 class="ui-widget-header">#affordable</h6>
-  </li>
-  <li class="ui-widget-content ui-corner-tr">
-    <h6 class="ui-widget-header">#crowded</h6>
-  </li>
-  <li class="ui-widget-content ui-corner-tr">
-    <h6 class="ui-widget-header">#badfood</h6>
-  </li>
-</ul>
-<div id="trash" class="ui-widget-content ui-state-default">
-  <h4 class="ui-widget-header">Review Box</h4>
+    <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+        <li class="ui-widget-content ui-corner-tr" >
+            <h6 class="ui-widget-header " >#goodfood</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr">
+            <h6 class="ui-widget-header">#awesome</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr">
+            <h6 class="ui-widget-header">#disappointed</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr">
+            <h6 class="ui-widget-header">#average</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr">
+            <h6 class="ui-widget-header">#fastfood</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr">
+            <h6 class="ui-widget-header">#overpriced</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr">
+            <h6 class="ui-widget-header">#affordable</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr">
+            <h6 class="ui-widget-header">#crowded</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr">
+            <h6 class="ui-widget-header">#badfood</h6>
+        </li>
+    </ul>
+    <div id="trash" class="ui-widget-content ui-state-default">
+        <h4 class="ui-widget-header">Review Box</h4>
+    </div>
+
 </div>
- 
+
+<div class="header">
+    <ul>
+        <li style="float: left;">
+            <button style="float: left;" onclick="w3_open()">&#9776;</button>
+        </li>
+        <li style="float: left; margin-left: 700px">
+            <h3 style="color:white">foodster</h3>
+        </li>
+
+        <li style="float: right;">
+            <button id="b1" type="button"
+                    onmouseover="mouseOver()"
+                    onmouseout="mouseOut()"
+                    onclick="document.getElementById('id01').style.display='block'">Sign Out
+            </button>
+        </li>
+    </ul>
 </div>
- 
- 
+
+
 </body>
 </html>
