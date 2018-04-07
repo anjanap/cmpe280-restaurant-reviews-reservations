@@ -39,6 +39,7 @@ app.use('/users', users);
 app.use('/signin', signin.login);
 app.use('/signup', signup.signup);
 app.use('/addreview', reviews.add);
+app.use('/allreviews', reviews.display);
 
 
 // catch 404 and forward to error handler

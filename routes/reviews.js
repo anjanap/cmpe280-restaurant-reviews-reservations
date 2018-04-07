@@ -1,7 +1,7 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/cmpe280";
 
-function check(req, res) {
+function add(req, res) {
 
     var review = req.body.newreview;
     var userid = 1;
@@ -21,4 +21,26 @@ function check(req, res) {
     });
 
 }//function
-exports.add = check;
+exports.add = add;
+
+
+function display(req, res) {
+
+    var userid = 1;
+    console.log("user: " + userid);
+
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("cmpe280");
+        dbo.collection("reviews").find({userid: userid}).toArray(function(err, result) {
+            if (err) throw err;
+            if(result)
+                res.send(result);
+            else
+                res.render('../views/error.html');
+            db.close();
+        });
+    });
+
+}//function
+exports.display = display;
