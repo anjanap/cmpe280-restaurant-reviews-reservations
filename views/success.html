@@ -6,21 +6,27 @@
     <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
     <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script>
+    var updateid;
+    var resultarr='<table>';
 
-    var resultarr="<table>";
     $(document).ready(function() {
     $.ajax({
         url: 'http://localhost:3000/allreviews',
         type: 'GET',
         jsonpCallback: 'callback', // this is not relevant to the POST anymore
         success: function (data) {
+          test = data[0].review;
           console.log(data[0].review);
           for(var i=0;i<data.length;i++){
-            console.log(data[i].review);
-          resultarr+="<tr><td>" + data[i].review + "</td></tr>";//<td><button onclick='updatereview("+data[i]._id+");'>Update</button></td><td><button onclick='deletereview("+data[i]._id+");'>Delete</button></td></tr>";
+          console.log("CHECK TYPE: "+typeof(data[i]._id));
+
+          resultarr+='<tr><td>' + data[i].review + '</td></tr><td><button onclick="hideshowupdate(\''+data[i]._id+'\');">Update</button></td><td><button onclick="deletereview(\''+data[i]._id+'\')">Delete</button></td></tr>';
           }
-          resultarr+="</table>";
+          resultarr+='</table>';
+          //document.write(resultarr);
+          document.getElementById("demo").innerHTML=resultarr;
           console.log(resultarr);
+          console.log(test);
         },
         error: function (xhr, status, error) {
             console.log('Error: ' + error.message);
@@ -37,13 +43,58 @@
       mydiv.style.display = 'none'
     }
 
-    var updatereview = function(reviewid) {
-alert("Update: "+reviewid);
+    var hideshowupdate = function(reviewid) {
+    var mydiv = document.getElementById('updatediv');
+    if (mydiv.style.display === 'none'){
+      mydiv.style.display = 'block';
+      updateid=reviewid;
+      document.getElementById("id").value=reviewid;
+    }
+    else
+      mydiv.style.display = 'none'
     }
 
+  /*  var updatereview = function(reviewid) {
+//alert("Update: "+reviewid);
+
+$.ajax({
+    url: 'http://localhost:3000/updatereview',
+    data: {
+            "id": updateid,
+            "updatereview":
+        },
+    dataType: 'json',
+    type: 'GET',
+    jsonpCallback: 'callback', // this is not relevant to the POST anymore
+    success: function (data) {
+      console.log("success");
+    },
+    error: function (xhr, status, error) {
+        console.log('Error: ' + error.message);
+      },
+    });
+  }
+
+  }*/
+
     var deletereview = function(reviewid) {
-alert("Delete: "+reviewid);
+$.ajax({
+    url: 'http://localhost:3000/deletereview',
+    data: {
+            "id": reviewid
+        },
+    dataType: 'json',
+    type: 'GET',
+    jsonpCallback: 'callback', // this is not relevant to the POST anymore
+    success: function (data) {
+      console.log("success");
+    },
+    error: function (xhr, status, error) {
+        console.log('Error: ' + error.message);
+      },
+    });
     }
+
     </script>
 </head>
 <body>
@@ -51,14 +102,21 @@ alert("Delete: "+reviewid);
 <h2>Sign Up/In Successful</h2>
 
 <h2>All reviews</h2>
-<script>
-document.write(resultarr);
-</script>
-<button type="button" id="reviewbutton" onclick="hideshow();">Add</button>
+<div id="demo"></div>
+
+<button type="button" id="reviewbutton" onclick='hideshow();'>Add</button>
 <div id="addreview" style="display:none;">
 <form action="/addreview" method="POST">
   <input name="newreview" type="text" placeholder="Add review" size="70"/>
-  <button type="submit">Submit</button>
+  <input type="submit" value="Add"/>
+</form>
+</div>
+
+<div id="updatediv" style="display:none;">
+<form action="/updatereview" method="POST">
+  <input name="updatereview" type="text" placeholder="Update review" size="70"/>
+    <input name="updateid" id="id" type="text" size="70" style="display:none;"/>
+  <input type="submit" value="Update"/>
 </form>
 </div>
 

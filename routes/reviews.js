@@ -49,7 +49,7 @@ exports.display = display;
 
 function update(req, res) {
 
-    var id = '5ac91ae11a058e15848a42fa';
+    var id = req.body.updateid;
     var review = req.body.updatereview;
 
     MongoClient.connect(url, function(err, db) {
@@ -73,8 +73,8 @@ exports.update = update;
 
 function remove(req, res) {
 
-    var id = '5ac91ae11a058e15848a42fa';
-
+    var id = req.param("id");//'5ac91d3f0683426258aa387c';
+console.log(id);
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("cmpe280");
@@ -82,7 +82,7 @@ function remove(req, res) {
         dbo.collection("reviews").deleteOne(myquery, function(err, result) {
             if (err) throw err;
             if(result)
-                res.render('../views/success.html');
+                res.send({result:1});
             else
                 res.render('../views/error.html');
             db.close();
