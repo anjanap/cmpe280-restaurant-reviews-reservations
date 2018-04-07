@@ -14,11 +14,13 @@
         type: 'GET',
         jsonpCallback: 'callback', // this is not relevant to the POST anymore
         success: function (data) {
-for(var i=0;i<data.length;i++){
-resultarr+="<tr><td>" + data[i].review + "</td></tr>";//<td><button onclick='updatereview("+data[i]._id+");'>Update</button></td><td><button onclick='deletereview("+data[i]._id+");'>Delete</button></td></tr>";
-}
-resultarr="</table>";
-document.getElementById("demo").innerHTML =resultarr;
+          console.log(data[0].review);
+          for(var i=0;i<data.length;i++){
+            console.log(data[i].review);
+          resultarr+="<tr><td>" + data[i].review + "</td></tr>";//<td><button onclick='updatereview("+data[i]._id+");'>Update</button></td><td><button onclick='deletereview("+data[i]._id+");'>Delete</button></td></tr>";
+          }
+          resultarr+="</table>";
+          console.log(resultarr);
         },
         error: function (xhr, status, error) {
             console.log('Error: ' + error.message);
@@ -50,9 +52,8 @@ alert("Delete: "+reviewid);
 
 <h2>All reviews</h2>
 <script>
-document.getElementById("demo").innerHTML = resultarr;
+document.write(resultarr);
 </script>
-
 <button type="button" id="reviewbutton" onclick="hideshow();">Add</button>
 <div id="addreview" style="display:none;">
 <form action="/addreview" method="POST">

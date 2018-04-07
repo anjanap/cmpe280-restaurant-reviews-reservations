@@ -36,7 +36,7 @@ function display(req, res) {
         dbo.collection("reviews").find({userid: userid}).toArray(function(err, result) {
             if (err) throw err;
             if(result)
-                res.send({data:result});
+                res.send(result);
             else
                 res.render('../views/error.html');
             db.close();
