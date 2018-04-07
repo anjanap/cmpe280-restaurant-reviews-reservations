@@ -31,13 +31,6 @@ function check(req, res) {
     var password = req.body.password;
     console.log("email: " + email);
     console.log("password: " + password);
-  /*  if (email == "abc@abc.com" && password == "123456") {
-        console.log("password:$$$$$$$$SSSS " + password);
-        res.render('../views/success.html');
-    }
-    else{
-        res.render('../views/error.html');
-    }*/
 
 
     MongoClient.connect(url, function(err, db) {
