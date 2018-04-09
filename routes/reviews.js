@@ -1,27 +1,44 @@
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/cmpe280";
+//var MongoClient = require('mongodb').MongoClient;
+//var url = "mongodb://localhost:27017/cmpe280";
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/cmpe280');
+var review = require('../models/model_review.js');
 var ObjectId = require('mongodb').ObjectID;
 
-function add(req, res) {
-
+function add(req,res){
+    
     var review = req.body.newreview;
     var userid = 1;
-    console.log("Review: " + review + " by user: " + userid);
+    console.log(review);
+    var item = {
+        userid: 1,
+        review: review
+    };
+    var newReview = new review(item);
+    console.log(newReview + "HHHHHH") ;
+    var flag = newUser.save();
+    res.render('../views/success.html');
+}
+// function add(req, res) {
 
-    MongoClient.connect(url, function(err, db) {
-        if (err) throw err;
-        var dbo = db.db("cmpe280");
-        dbo.collection("reviews").insertOne({userid: userid, review: review}, function(err, result) {
-            if (err) throw err;
-            if(result)
-                res.render('../views/success.html');
-            else
-                res.render('../views/error.html');
-            db.close();
-        });
-    });
+//     var review = req.body.newreview;
+//     var userid = 1;
+//     console.log("Review: " + review + " by user: " + userid);
 
-}//function
+//     MongoClient.connect(url, function(err, db) {
+//         if (err) throw err;
+//         var dbo = db.db("cmpe280");
+//         dbo.collection("reviews").insertOne({userid: userid, review: review}, function(err, result) {
+//             if (err) throw err;
+//             if(result)
+//                 res.render('../views/success.html');
+//             else
+//                 res.render('../views/error.html');
+//             db.close();
+//         });
+//     });
+
+// }//function
 exports.add = add;
 
 
