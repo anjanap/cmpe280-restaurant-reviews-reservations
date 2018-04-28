@@ -59,6 +59,22 @@
         } );
     </script>
 
+    <script>
+        $(function(){
+        $("#header").load("header.html");
+        $("#mySidebar").load("sidenav.html");
+});
+    </script>
+
+<script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+</script>
 
     <style>
        #tabs-1{font-size: 14px;}
@@ -106,39 +122,9 @@
 </head>
 <body onload="loadfirst()" background="/images/img5.jpg">
 
-<div class="sidenav" id="mySidebar" style="background-color: #111111 ;position: fixed;width: 160px; height: 100%;">
-    <a href="#">About</a>
-    <a id="sideNav1" href="#about" onmouseover="mouseOverSideNav(1)" onmouseout="mouseOutSideNav(1)">About</a>
-    <a id="sideNav2" href="#contact" onmouseover="mouseOverSideNav(2)" onmouseout="mouseOutSideNav(2)">Contact Us</a>
-    <a id="sideNav3" href="#business" onmouseover="mouseOverSideNav(3)" onmouseout="mouseOutSideNav(3)">Business</a>
-    <a id="sideNav4" href="#blog" onmouseover="mouseOverSideNav(4)" onmouseout="mouseOutSideNav(4)">Blog</a>
-</div>
+<div id="header"></div>
+<div id="mySidebar"></div>
 
-<div class="header">
-    <ul>
-        <li style="float: left;">
-            <button style="float: left;" onclick="w3_open()">&#9776;</button>
-        </li>
-        <li style="float: left; margin-left: 700px">
-            <h3 style="color:white">foodster</h3>
-        </li>
-
-        <li style="float: right;">
-            <button id="b1" type="button"
-                    onmouseover="mouseOver()"
-                    onmouseout="mouseOut()"
-                    onclick="document.getElementById('id01').style.display='block'">Sign Up
-            </button>
-        </li>
-        <li style="float: right;" s>
-            <button id="b2" type="button"
-                    onmouseover="mouseOver1()"
-                    onmouseout="mouseOut1()"
-                    onclick="document.getElementById('id02').style.display='block'">Sign In
-            </button>
-        </li>
-    </ul>
-</div>
 
 <div class="wrap">
     <div class="search">

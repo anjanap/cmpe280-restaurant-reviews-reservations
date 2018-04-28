@@ -8,6 +8,24 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
     <meta charset="utf-8">
     <title>droppable demo</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="validations.js"></script>
+    <script type="text/javascript" src="userinteractivity.js"></script>
+    <script type="text/javascript" src="modal.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css
+       " rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
     <style>
         #gallery { float: left; width: 65%; min-height: 12em;position: relative; top: 93px ;
             background: transparent;}
@@ -96,6 +114,13 @@
 
         });
     </script>
+
+    <script>
+        $(function(){
+        $("#header").load("header.html");
+});
+    </script>
+
 </head>
 <body background="/images/img5.jpg">
 <div class="ui-widget ui-helper-clearfix">
@@ -133,26 +158,7 @@
     </div>
 
 </div>
-
-<div class="header">
-    <ul>
-        <li style="float: left;">
-            <button style="float: left;" onclick="w3_open()">&#9776;</button>
-        </li>
-        <li style="float: left; margin-left: 700px">
-            <h3 style="color:white">foodster</h3>
-        </li>
-
-        <li style="float: right;">
-            <button id="b1" type="button"
-                    onmouseover="mouseOver()"
-                    onmouseout="mouseOut()"
-                    onclick="document.getElementById('id01').style.display='block'">Sign Out
-            </button>
-        </li>
-    </ul>
-</div>
-
-
+<div id="mySidebar"></div>
+<div id="header"></div>
 </body>
 </html>
