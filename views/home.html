@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CMPE 280</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script type="text/javascript" src="validations.js"></script>
     <script type="text/javascript" src="userinteractivity.js"></script>
-    <script type="text/javascript" src="modal.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -18,6 +15,9 @@
     <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 
 
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
+
 
     <script>
        $(function() {
@@ -25,6 +25,22 @@
        });
     </script>
 
+    <script>
+        $(function(){
+        $("#header2").load("header2.html");
+        $("#mySidebar").load("sidenav.html");
+      });
+    </script>
+
+    <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+    </script>
 
     <script>
     var resultarr='<h3>';
@@ -104,6 +120,9 @@
 
 </head>
 <body>
+  <div id="header2"></div>
+  <!-- <div id="mySidebar"></div> -->
+
 <div class="wrap">
     <form id="form">
     <div class="search" >

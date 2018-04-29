@@ -31,21 +31,6 @@
             $( "#datepicker" ).datepicker();
         } );
 
-        $( function() {
-            var availableTags = [
-                "San Jose",
-                "San Fransisco",
-                "New York",
-                "New Jersey",
-                "Chicago"
-            ];
-            $( "#tags" ).autocomplete({
-                source: availableTags
-//                appendTo: '#div',
-//                open: function() { $('#div .ui-menu').width(30) }
-            });
-        } );
-
         $.extend($.ui.autocomplete.prototype.options, {
             open: function(event, ui) {
                 $(this).autocomplete("widget").css({
@@ -76,75 +61,11 @@
         }
 </script>
 
-    <style>
-       #tabs-1{font-size: 14px;}
-
-       .ui-tabs {
-       position: absolute;
-       padding: .2em;
-       left: 12%;
-       width: 85%;
-       height: auto;
-       top: 13%;
-       }
-
-       #tabs-1 .ui-tabs-nav {
-            height: 2.60em;
-            text-align: center;
-            top: 12%;
-            width:100%;
-            right: 43px;
-        }
-      #tabs-1 .ui-tabs-nav li {
-           display: inline-block;
-           float: none;
-           top: 0px;
-           margin: 0em;
-           padding-bottom: 0px;
-       }
-
-       .ui-widget-header {
-          border: 1px solid #b9cd6d;
-          color: #FFFFFF;
-          font-weight: bold;
-       }
-
-       .ui-tabs .ui-tabs-panel{
-       background:#FFFFFF;
-       }
-       .ui-tabs .ui-tabs-nav .ui-tabs-anchor{
-       width:390px;
-       }
-
-    </style>
-
-
 </head>
 <body onload="loadfirst()" background="/images/img5.jpg">
 
 <div id="header"></div>
 <div id="mySidebar"></div>
-
-
-<div class="wrap">
-    <form action="/search" method="POST">
-    <div class="search" >
-        <input type="text" class="searchTerm" placeholder="Find restaurants" name = "restaurant_name" required>
-        <button type="submit" class="searchButton">
-            Submit
-            <i class="fa fa-search"></i>
-        </button>
-    </div>
-    </form>
-</div>
-
-<div  class="container" id = "tabs-1">
-   <ul>
-      <li><a href = "tabpages/searchtab.html">Search</a></li>
-      <li><a href = "tabpages/reviewtab.html">Review</a></li>
-      <li><a href = "tabpages/reservetab.html">Reserve</a></li>
-   </ul>
-</div>
 
 <!-- The Modal (contains the Sign Up form) -->
 <div id="id01" class="modal">
