@@ -1,43 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
-
     <script type="text/javascript" src="userinteractivity.js"></script>
-
-
-
-    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
     <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-
-
-    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
-
 
     <script>
        $(function() {
           $( "#tabs-1" ).tabs();
        });
-    </script>
-
-    <script>
-        $(function(){
-        $("#header2").load("header2.html");
-        $("#mySidebar").load("sidenav.html");
-      });
-    </script>
-
-    <script>
-            function openNav() {
-                document.getElementById("mySidenav").style.width = "250px";
-            }
-
-            function closeNav() {
-                document.getElementById("mySidenav").style.width = "0";
-            }
     </script>
 
     <script>
@@ -72,70 +44,25 @@
               });
       });
       </script>
-
-    <style>
-       #tabs-1{font-size: 14px;}
-
-       .ui-tabs {
-       position: absolute;
-       padding: .2em;
-       left: 12%;
-       width: 85%;
-       height: auto;
-       top: 13%;
-       }
-
-       #tabs-1 .ui-tabs-nav {
-            height: 2.60em;
-            text-align: center;
-            top: 12%;
-            width:100%;
-            right: 43px;
-        }
-      #tabs-1 .ui-tabs-nav li {
-           display: inline-block;
-           float: none;
-           top: 0px;
-           margin: 0em;
-           padding-bottom: 0px;
-       }
-
-       .ui-widget-header {
-          border: 1px solid #b9cd6d;
-          color: #FFFFFF;
-          font-weight: bold;
-       }
-
-       .ui-tabs .ui-tabs-panel{
-       background:#FFFFFF;
-       }
-       .ui-tabs .ui-tabs-nav .ui-tabs-anchor{
-       width:390px;
-       }
-
-    </style>
-
-
 </head>
 <body>
-  <div id="header2"></div>
-  <!-- <div id="mySidebar"></div> -->
+  <button class="button1" id="b1" type="button" onmouseover="mouseOver()" onmouseout="mouseOut()"
+          onclick="document.getElementById('id01').style.display='block'">Logout </button>
 
-<div class="wrap">
     <form id="form">
     <div class="search" >
         <input type="text" class="searchTerm" placeholder="Find restaurants" name = "restaurant_name" required>
-        <button type="submit" class="searchButton">
+        <button class="button1" type="submit" class="searchButton">
             Submit
             <i class="fa fa-search"></i>
         </button>
     </div>
     </form>
-</div>
 
-<div id="display" style="margin-top:400px"></div>
 
-<div class="container" id = "tabs-1" style="margin-top:550px;display:none">
+<div id="display" ></div>
+
+<div class="container" id = "tabs-1" style="display:none">
    <ul>
       <li><a href = "tabpages/reviewtab.html">Review</a></li>
       <li><a href = "tabpages/reservetab.html">Reserve</a></li>
