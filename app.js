@@ -13,7 +13,7 @@ var signup = require('./routes/signup');
 var reviews = require('./routes/reviews');
 var test = require('./routes/test');
 var search = require('./routes/search');
-
+var makebooking=require('./routes/makebooking');
 
 var app = express();
 //var MongoClient = require('mongodb').MongoClient;
@@ -47,6 +47,8 @@ app.use('/updatereview', reviews.update);
 app.use('/deletereview', reviews.remove);
 app.use('/test', test.test);
 app.use('/search', search.search);
+app.use('/newbooking', makebooking.newbooking);
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
