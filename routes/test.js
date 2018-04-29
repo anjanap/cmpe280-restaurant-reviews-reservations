@@ -20,12 +20,12 @@ console.log(req.body);
 
 function test(req,res){
     var review = req.body.review_list;
-    var userid = 1;
-    var rest_id = 1;
-    rest_id = rest_id + "";
+    var userid = req.session.userid;
+    var rest_id = req.session.restaurantid;
+    //rest_id = rest_id + "";
     console.log(review);
     var item = {
-        userid: 1,
+        userid: userid,
         restaurantid: rest_id, 
         Description: review
     };

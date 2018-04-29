@@ -7,10 +7,10 @@ var ObjectId = require('mongodb').ObjectID;
 
 function add(req,res){
     var review = req.body.newreview;
-    var userid = 1;
+    var userid = req.session.userid;
     console.log(review);
     var item = {
-        userid: 1,
+        userid: userid,
         review: review
     };
     console.log(item);
@@ -42,7 +42,7 @@ function add(req,res){
 exports.add = add;
 
 function display(req,res){
-    var userid = 1;    
+    var userid = req.session.userid;
     console.log(userid + "&&&&&&&");
     review_model.find({userid: userid},function(err,result){
         if(err) throw err;

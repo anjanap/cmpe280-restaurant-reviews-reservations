@@ -4,10 +4,10 @@ var ObjectId = require('mongodb').ObjectID;
 
 function newbooking(req, res) {
 
-    var restid = "5ae4cf76942d22ea93841dd7";//req.body.restid;
+    var restid = req.session.restaurantid;
     var numtab = req.body.tables;
     var bookdate = req.body.bookdate;
-    var userid = 1;
+    var userid = req.session.userid;
     console.log("tables: " + numtab);
 
     MongoClient.connect(url, function(err, db) {

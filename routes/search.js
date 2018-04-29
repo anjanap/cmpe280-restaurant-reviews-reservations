@@ -2,11 +2,14 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/cmpe280";
 var reviews = require('./reviews');
 
+
 function search(req, res) {
 
     var restaurant_name = req.body.restaurant_name;
     console.log("rest name: "+restaurant_name);
-    var u_id = 1;
+    var u_id = req.session.userid;
+    u_id =1;
+    console.log(u_id);
     var final = [];
 
     MongoClient.connect(url, function(err, db) {
@@ -18,7 +21,8 @@ function search(req, res) {
                 res.send("No restaurants found!");
             else {
                 var r_id = r_result[0]._id + "";
-                console.log(r_id);
+                req.session.restaurantid = r_id;
+                console.log(req.session.restaurantid);
                 //r_id = "5ae4d0f8d102c4c87b48c5cc";
                 dbo.collection("reviews").find({userid: u_id, restaurantid: r_id}).toArray(function(err, result) {
                     if (err) throw err;

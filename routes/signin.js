@@ -5,6 +5,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/cmpe280');
 var User = require('../models/model.js');
+var userid;
 
 /*
 router.post('/signin', function(req, res, next) {
@@ -36,9 +37,15 @@ function check_mongoose(req,res){
     User.findOne({email: email, password: password},function(err, result){
         if(err) res.render('../views/error.html');
         if(result)
-        res.render('../views/home.html');
+        {
+            req.session.userid = result._id + "";
+            console.log(req.session.userid);
+            res.render('../views/home.html');
+        }
     });
 }
+
+exports.userid = userid;
 // function check(req, res) {
 
 //     var email = req.body.email;
