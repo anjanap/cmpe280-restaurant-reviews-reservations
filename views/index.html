@@ -3,28 +3,12 @@
 <head>
     <title>CMPE 280</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script type="text/javascript" src="validations.js"></script>
     <script type="text/javascript" src="userinteractivity.js"></script>
     <script type="text/javascript" src="modal.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-
-    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css
-       " rel = "stylesheet">
-    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-
-    <script>
-       $(function() {
-          $( "#tabs-1" ).tabs();
-       });
-    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+<script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 
     <script>
         $( function() {
@@ -44,28 +28,24 @@
         } );
     </script>
 
-    <script>
-        $(function(){
-        $("#header").load("header.html");
-        $("#mySidebar").load("sidenav.html");
-});
-    </script>
 
-<script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-</script>
 
 </head>
-<body onload="loadfirst()" background="/images/img5.jpg">
+<body>
 
-<div id="header"></div>
-<div id="mySidebar"></div>
+      <button id="b1" type="button"
+              onmouseover="mouseOver()"
+              onmouseout="mouseOut()"
+              onclick="document.getElementById('id01').style.display='block'">Sign Up
+      </button>
+
+      <button id="b2" type="button"
+              onmouseover="mouseOver1()"
+              onmouseout="mouseOut1()"
+              onclick="document.getElementById('id02').style.display='block'">Sign In
+      </button>
+
 
 <!-- The Modal (contains the Sign Up form) -->
 <div id="id01" class="modal">
