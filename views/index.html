@@ -127,14 +127,15 @@
 
 
 <div class="wrap">
-    <div class="search">
-        <input type="text" class="searchTerm" placeholder="Find restaurants" required>
-        <input type="text" id="tags" class="searchCity" placeholder="City" required>
+    <form action="/search" method="POST">
+    <div class="search" >
+        <input type="text" class="searchTerm" placeholder="Find restaurants" name = "resturant_name" required>
         <button type="submit" class="searchButton">
             Submit
             <i class="fa fa-search"></i>
         </button>
     </div>
+    </form>
 </div>
 
 <div  class="container" id = "tabs-1">

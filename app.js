@@ -12,6 +12,7 @@ var signin = require('./routes/signin');
 var signup = require('./routes/signup');
 var reviews = require('./routes/reviews');
 var test = require('./routes/test');
+var search = require('./routes/search');
 
 
 var app = express();
@@ -45,7 +46,7 @@ app.use('/allreviews', reviews.display);
 app.use('/updatereview', reviews.update);
 app.use('/deletereview', reviews.remove);
 app.use('/test', test.test);
-
+app.use('/search', search.search);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
