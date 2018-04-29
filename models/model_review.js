@@ -2,8 +2,9 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var reviewSchema = new Schema({
+	restaurantid: String,
     userid: Number,
-    review: { type: String, required: true}
+    Description: { type: String, required: true}
 },{collection:'reviews'});
 
 module.exports = mongoose.model('review', reviewSchema);

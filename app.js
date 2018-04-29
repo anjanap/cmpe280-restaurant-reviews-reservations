@@ -11,6 +11,8 @@ var users = require('./routes/users');
 var signin = require('./routes/signin');
 var signup = require('./routes/signup');
 var reviews = require('./routes/reviews');
+var test = require('./routes/test');
+
 
 var app = express();
 //var MongoClient = require('mongodb').MongoClient;
@@ -42,6 +44,7 @@ app.use('/addreview', reviews.add);
 app.use('/allreviews', reviews.display);
 app.use('/updatereview', reviews.update);
 app.use('/deletereview', reviews.remove);
+app.use('/test', test.test);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
