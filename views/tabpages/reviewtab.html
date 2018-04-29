@@ -4,3 +4,186 @@ Read reviews and experience of other foodies and share your experience for other
 </p>
 <a href="/review.html" style="color: #0000FF">SEARCH</a>
 </div>
+
+
+<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+<script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+<script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <meta charset="utf-8">
+    <title>droppable demo</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="validations.js"></script>
+    <script type="text/javascript" src="userinteractivity.js"></script>
+    <script type="text/javascript" src="modal.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css
+       " rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <style>
+        #gallery { float: left; width: 65%; min-height: 12em;position: relative; top: 93px ;
+            background: transparent;}
+        .gallery.custom-state-active { }
+        .gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+        .gallery li h6 { margin: 0 0 0.4em; cursor: move; }
+
+
+        #trash { float: left; width: 32%; min-height: 10em; padding: 1%; background: #ffffff; position: absolute ;top: 376px}
+        #trash h4 { line-height: 16px; margin: 0 0 0.6em; }
+        #trash h4 .ui-icon { float: left; }
+        #trash .gallery h6 { margin: 0 0 0.4em; cursor: move; }
+    </style>
+
+
+<div class="ui-widget ui-helper-clearfix" id="list">
+    <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+        <li class="ui-widget-content ui-corner-tr" id="#goodfood">
+            <h6 class="ui-widget-header ">#goodfood</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#awesome">
+            <h6 class="ui-widget-header">#awesome</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#disappointed">
+            <h6 class="ui-widget-header">#disappointed</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#average">
+            <h6 class="ui-widget-header">#average</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#fastfood">
+            <h6 class="ui-widget-header">#fastfood</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#overpriced">
+            <h6 class="ui-widget-header">#overpriced</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#affordable">
+            <h6 class="ui-widget-header">#affordable</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#crowded">
+            <h6 class="ui-widget-header">#crowded</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#badfood">
+            <h6 class="ui-widget-header">#badfood</h6>
+        </li>
+    </ul>
+    <div id="trash" class="ui-widget-content ui-state-default">
+        <h4 class="ui-widget-header">Review Box</h4>
+    </div>
+
+</div>
+    <script type="text/javascript">
+        var reviewlist = [];
+        $( function() {
+
+            // There's the gallery and the trash
+            var $gallery = $( "#gallery" ),
+                $trash = $( "#trash" );
+
+            // Let the gallery items be draggable
+            $( "li", $gallery ).draggable({
+                revert: "invalid", // when not dropped, the item will revert back to its initial position
+                containment: "document",
+                helper: "clone",
+                cursor: "move"
+            });
+
+            $( "#trash" ).resizable({
+                animate: true
+            });
+
+
+            // Let the trash be droppable, accepting the gallery items
+            $trash.droppable({
+                accept: "#gallery > li",
+                classes: {
+                    "ui-droppable-active": "ui-state-highlight"
+                },
+                drop: function( event, ui ) {
+                    //var id = ui.attr("id");
+                    //console.log( ui.draggable.context.id);
+                    reviewlist.push(ui.draggable.context.id);
+                    console.log(reviewlist);
+                    //console.log(event.target.attr('id'));
+                   // console.log('ui.item >li'.attr('id'));
+                    //console.log(ui.item.context.childNodes[1].id);
+                    deleteImage( ui.draggable );
+                }
+            });
+
+
+            // Let the gallery be droppable as well, accepting items from the trash
+            $gallery.droppable({
+                accept: "#trash li",
+                classes: {
+                    "ui-droppable-active": "custom-state-active"
+                },
+                drop: function( event, ui ) {
+
+                    var v=ui.draggable.context.id;
+                    //console.log(v);
+                    const index = reviewlist.indexOf(v);
+                    reviewlist.splice(index, 1);
+                    recycleImage( ui.draggable );
+                    //console.log("removed");
+                    console.log(reviewlist);
+                    //console.log("Dropped to gallery: " + id);
+                }
+            });
+
+            // Image deletion function
+            function deleteImage( $item ) {
+                $item.fadeOut(function() {
+                    var $list = $( "ul", $trash ).length ?
+                        $( "ul", $trash ) :
+                        $( "<ul class='gallery ui-helper-reset'/>" ).appendTo( $trash );
+
+                    $item.appendTo( $list ).fadeIn(function() {
+                        $item
+                            .animate({ width: "auto" })
+                            .find( "img" )
+                            .animate({ height: "36px" });
+                    });
+                });
+            }
+
+            function recycleImage( $item ) {
+                $item.fadeOut(function() {
+                    $item
+                        .find( "a.ui-icon-refresh" )
+                        .remove()
+                        .end()
+                        .css( "width", "96px")
+                        .find( "img" )
+                        .css( "height", "72px" )
+                        .end()
+                        .appendTo( $gallery )
+                        .fadeIn();
+                });
+            }
+
+        });
+        function test(){
+            console.log("hi"+reviewlist);
+            document.getElementById("reviewfield").value = reviewlist;
+        }
+    </script>
+
+    <script>
+        $(function(){
+        $("#header").load("header.html");
+});
+    </script>
+    <form id="reviewform" onsubmit="return test()" action="/test" method = "POST">
+    <input type="hidden" id="reviewfield" name="review_list" />
+    <button type="submit"  style ="margin-top: 400px; width: 100px">Submit Review</button>
+</form>

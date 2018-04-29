@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CMPE 280</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="validations.js"></script>
+    <script type="text/javascript" src="userinteractivity.js"></script>
+    <script type="text/javascript" src="modal.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+
+
+    <script>
+       $(function() {
+          $( "#tabs-1" ).tabs();
+       });
+    </script>
+
+
+    <script>
+    var resultarr='<h3>';
+      $(document).ready(function() {
+          $("#form")
+              .submit(function(event) {
+                  var formData = {
+                  'restaurant_name': $('input[name=restaurant_name]').val()
+                   };
+                   $.ajax({
+                     url: 'http://localhost:3000/search',
+                     data: formData,
+                       type: 'POST',
+                       success: function (data) {
+                         temp=data;
+                         console.log(data[0].restaurant_name);
+                         resultarr+=data[0].restaurant_name+'</h3>';
+                         resultarr+='<h5>Address: '+data[0].Address+'</h5>';
+                         resultarr+='<h5>Cusine: '+data[0].Cusine+'</h5>';
+                         resultarr+='<h5>Tables remaining: '+data[0].Tables+'</h5>';
+
+                         document.getElementById("display").innerHTML=resultarr;
+                         var showtab=document.getElementById("tabs-1");
+                         showtab.style.display="block";
+                       },
+                       error: function (xhr, status, error) {
+                           console.log('Error: ' + error.message);
+                         },
+                       });
+                  event.preventDefault();
+              });
+      });
+      </script>
+
+    <style>
+       #tabs-1{font-size: 14px;}
+
+       .ui-tabs {
+       position: absolute;
+       padding: .2em;
+       left: 12%;
+       width: 85%;
+       height: auto;
+       top: 13%;
+       }
+
+       #tabs-1 .ui-tabs-nav {
+            height: 2.60em;
+            text-align: center;
+            top: 12%;
+            width:100%;
+            right: 43px;
+        }
+      #tabs-1 .ui-tabs-nav li {
+           display: inline-block;
+           float: none;
+           top: 0px;
+           margin: 0em;
+           padding-bottom: 0px;
+       }
+
+       .ui-widget-header {
+          border: 1px solid #b9cd6d;
+          color: #FFFFFF;
+          font-weight: bold;
+       }
+
+       .ui-tabs .ui-tabs-panel{
+       background:#FFFFFF;
+       }
+       .ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+       width:390px;
+       }
+
+    </style>
+
+
+</head>
+<body>
+<div class="wrap">
+    <form id="form">
+    <div class="search" >
+        <input type="text" class="searchTerm" placeholder="Find restaurants" name = "restaurant_name" required>
+        <button type="submit" class="searchButton">
+            Submit
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+    </form>
+</div>
+
+<div id="display" style="margin-top:400px"></div>
+
+<div class="container" id = "tabs-1" style="margin-top:550px;display:none">
+   <ul>
+      <li><a href = "tabpages/reviewtab.html">Review</a></li>
+      <li><a href = "tabpages/reservetab.html">Reserve</a></li>
+   </ul>
+</div>
+
+</body>
+</html>

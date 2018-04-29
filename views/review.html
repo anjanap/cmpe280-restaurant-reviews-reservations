@@ -76,8 +76,6 @@
     </div>
 
 </div>
-<div id="mySidebar"></div>
-<div id="header"></div>
     <script type="text/javascript">
         var reviewlist = [];
         $( function() {
@@ -125,7 +123,7 @@
                     "ui-droppable-active": "custom-state-active"
                 },
                 drop: function( event, ui ) {
-                    
+
                     var v=ui.draggable.context.id;
                     //console.log(v);
                     const index = reviewlist.indexOf(v);

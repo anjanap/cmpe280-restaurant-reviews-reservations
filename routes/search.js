@@ -5,7 +5,7 @@ var reviews = require('./reviews');
 function search(req, res) {
 
     var restaurant_name = req.body.restaurant_name;
-    console.log(restaurant_name);
+    console.log("rest name: "+restaurant_name);
     var u_id = 1;
     var final = [];
 
@@ -27,6 +27,7 @@ function search(req, res) {
                         console.log(result);
                         final.push(r_result[0]);
                         res.send(final);
+                      //  res.render('../views/searchresult.html',{data:final});
                     }
 
                     else {

@@ -36,7 +36,7 @@ function check_mongoose(req,res){
     User.findOne({email: email, password: password},function(err, result){
         if(err) res.render('../views/error.html');
         if(result)
-        res.render('../views/success.html');
+        res.render('../views/home.html');
     });
 }
 // function check(req, res) {
