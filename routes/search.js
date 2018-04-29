@@ -8,7 +8,6 @@ function search(req, res) {
     var restaurant_name = req.body.restaurant_name;
     console.log("rest name: "+restaurant_name);
     var u_id = req.session.userid;
-    u_id =1;
     console.log(u_id);
     var final = [];
 
