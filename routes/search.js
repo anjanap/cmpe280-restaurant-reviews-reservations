@@ -22,29 +22,25 @@ function search(req, res) {
                 var r_id = r_result[0]._id + "";
                 req.session.restaurantid = r_id;
                 console.log(req.session.restaurantid);
-                //r_id = "5ae4d0f8d102c4c87b48c5cc";
-                dbo.collection("reviews").find({userid: u_id, restaurantid: r_id}).toArray(function(err, result) {
+                dbo.collection("reviews").find({restaurantid: r_id}).toArray(function(err, result) {
                     if (err) throw err;
                     if (result.length == 0)
                     {
-                        console.log(result);
                         final.push(r_result[0]);
                         res.send(final);
-                      //  res.render('../views/searchresult.html',{data:final});
                     }
 
                     else {
                         final.push(r_result[0]);
-                        final.push(result);
+                        for(var j=0;j<result.length;j++)
+                          final.push(result[j]);
                         res.send(final);
                     }
                     db.close();
                 });
-
             }
             db.close();
         });
     });
-
 }
 exports.search = search;
