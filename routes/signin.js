@@ -42,6 +42,9 @@ function check_mongoose(req,res){
             console.log(req.session.userid);
             res.render('../views/home.html');
         }
+        else {
+          res.render('../views/error.html');
+        }
     });
 }
 
