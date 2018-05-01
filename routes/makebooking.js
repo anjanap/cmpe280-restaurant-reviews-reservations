@@ -15,6 +15,8 @@ function newbooking(req, res) {
         var dbo = db.db("cmpe280");
         dbo.collection("booking").insertOne({restid: restid,userid: userid, tables: numtab,bookdate: bookdate}, function(err, result) {
             if (err) throw err;
+            else
+            res.render('../views/successbooking.html');
             db.close();
         });
     });
@@ -35,17 +37,15 @@ function newbooking(req, res) {
                     dbo.collection("restaurant_details").updateOne(myquery, newvalues, function(err, res) {
                       if (err) throw err;
                       console.log("1 document updated");
+
                       db.close();
                     });
                   });
                 }
-                else
-                    res.render('../views/error.html');
+
                 db.close();
             });
         });
-
-    res.render('../views/error.html');
 }//function
 
 exports.newbooking = newbooking;

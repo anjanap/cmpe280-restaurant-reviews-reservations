@@ -1,0 +1,43 @@
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+       rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script>
+            $(function() {
+               $( "#datep" ).datepicker({
+               "dateFormat": "dd-mm-yy",
+               "minDate": new Date(),
+             "maxDate": +7
+               });
+            });
+  </script>
+  <style>
+      input[type=text], input[type=number] {
+          width: 100%;
+          height: 35px;
+      }
+  </style>
+
+<div class="container">
+
+<form action="/newbooking" method="POST">
+
+    <div class="row">
+<div class="col-sm-2 col-md-2 col-lg-2">  <label>Number of tables:</label></div>
+<div class="col-sm-4 col-md-4 col-lg-4">  <input name="tables" type="number" min="0"/></div>
+<br/><br/>
+  </div>
+  <div class="row">
+  <div class="col-sm-2 col-md-2 col-lg-2"><label>Date:</label></div>
+  <div class="col-sm-4 col-md-4 col-lg-4"><input type="text" name="bookdate" id="datep"></div>
+  <br/><br/>
+</div>
+<div class="row">
+  <div class="col-sm-2 col-md-2 col-lg-2"></div>
+<div class="col-sm-4 col-md-4 col-lg-4"><input type="submit" class="btn-form" style="width:100%; height:40px;" value="Book"/></div>
+  </div>
+</form>
+
+</div>

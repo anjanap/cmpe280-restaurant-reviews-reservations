@@ -1,46 +1,22 @@
-<div>
-<p class="tabpages">
-Read reviews and experience of other foodies and share your experience for others
-</p>
-<a href="/review.html" style="color: #0000FF">SEARCH</a>
-</div>
 
-
-<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
-<script src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
-<script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
-    <meta charset="utf-8">
-    <title>droppable demo</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/ajaxtabs.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script type="text/javascript" src="validations.js"></script>
-    <script type="text/javascript" src="userinteractivity.js"></script>
-    <script type="text/javascript" src="modal.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-
-    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css
-       " rel = "stylesheet">
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
     <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 
     <style>
-        #gallery { float: left; width: 65%; min-height: 12em;position: relative; top: 93px ;
+        #gallery { float: left; width: 100%; min-height: 12em;position: relative; top: 93px ;
             background: transparent;}
         .gallery.custom-state-active { }
-        .gallery li { float: left; width: 96px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
-        .gallery li h6 { margin: 0 0 0.4em; cursor: move; }
+        .gallery li { float: left; width: auto; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+        .gallery li h6 { margin: 0 0 0.4em; cursor: move; background: #ffffff}
 
-
-        #trash { float: left; width: 32%; min-height: 10em; padding: 1%; background: #ffffff; position: absolute ;top: 376px}
-        #trash h4 { line-height: 16px; margin: 0 0 0.6em; }
+        #trash { float: left; width: 35%; min-height: 10em; padding: 1%; background: #ffffff; position: absolute ;top: 345px}
+        #trash h4 { line-height: 16px; margin: 0 0 0.6em; background: #ff3a6d}
         #trash h4 .ui-icon { float: left; }
         #trash .gallery h6 { margin: 0 0 0.4em; cursor: move; }
     </style>
@@ -49,36 +25,44 @@ Read reviews and experience of other foodies and share your experience for other
 <div class="ui-widget ui-helper-clearfix" id="list">
     <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
         <li class="ui-widget-content ui-corner-tr" id="#goodfood">
-            <h6 class="ui-widget-header ">#goodfood</h6>
+            <h6 style="background:#42BE3E;">#goodfood</h6>
         </li>
         <li class="ui-widget-content ui-corner-tr" id="#awesome">
-            <h6 class="ui-widget-header">#awesome</h6>
+            <h6 style="background:#42BE3E;">#awesome</h6>
         </li>
         <li class="ui-widget-content ui-corner-tr" id="#disappointed">
-            <h6 class="ui-widget-header">#disappointed</h6>
+            <h6 style="background:#e23636;">#disappointed</h6>
         </li>
         <li class="ui-widget-content ui-corner-tr" id="#average">
-            <h6 class="ui-widget-header">#average</h6>
+            <h6 style="background:#e23636;">#average</h6>
         </li>
-        <li class="ui-widget-content ui-corner-tr" id="#fastfood">
-            <h6 class="ui-widget-header">#fastfood</h6>
+        <li class="ui-widget-content ui-corner-tr" id="#fastservice">
+            <h6 style="background:#42BE3E;">#fastservice</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#highly_recommended">
+            <h6 style="background:#42BE3E;">#highly_recommended</h6>
+        </li>
+        <li class="ui-widget-content ui-corner-tr" id="#never_recommended">
+            <h6 style="background:#e23636;">#never_recommended</h6>
         </li>
         <li class="ui-widget-content ui-corner-tr" id="#overpriced">
-            <h6 class="ui-widget-header">#overpriced</h6>
+            <h6 style="background:#e23636;">#overpriced</h6>
         </li>
         <li class="ui-widget-content ui-corner-tr" id="#affordable">
-            <h6 class="ui-widget-header">#affordable</h6>
+            <h6 style="background:#42BE3E;">#affordable</h6>
         </li>
         <li class="ui-widget-content ui-corner-tr" id="#crowded">
-            <h6 class="ui-widget-header">#crowded</h6>
+            <h6 style="background:#e23636;">#crowded</h6>
         </li>
         <li class="ui-widget-content ui-corner-tr" id="#badfood">
-            <h6 class="ui-widget-header">#badfood</h6>
+            <h6 style="background:#e23636;">#badfood</h6>
         </li>
     </ul>
+
     <div id="trash" class="ui-widget-content ui-state-default">
         <h4 class="ui-widget-header">Review Box</h4>
     </div>
+
 
 </div>
     <script type="text/javascript">
@@ -185,5 +169,5 @@ Read reviews and experience of other foodies and share your experience for other
     </script>
     <form id="reviewform" onsubmit="return test()" action="/test" method = "POST">
     <input type="hidden" id="reviewfield" name="review_list" />
-    <button type="submit"  style ="margin-top: 400px; width: 100px">Submit Review</button>
+    <button type="submit"  class="btn-form" style ="margin-top: 345px; position:auto;">Submit Review</button>
 </form>

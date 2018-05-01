@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var reviewSchema = new Schema({
 	restaurantid: String,
-    userid: Number,
+    userid: String,
     Description: { type: String, required: true}
 },{collection:'reviews'});
 

@@ -13,11 +13,6 @@ router.get('/test', function (req, res, next) {
 });
 
 
-/*function test(req,res){
-res.render('../views/test.html');
-console.log(req.body);
-}*/
-
 function test(req,res){
     var review = req.body.review_list;
     var userid = req.session.userid;
@@ -26,7 +21,7 @@ function test(req,res){
     console.log(review);
     var item = {
         userid: userid,
-        restaurantid: rest_id, 
+        restaurantid: rest_id,
         Description: review
     };
     console.log(item);
