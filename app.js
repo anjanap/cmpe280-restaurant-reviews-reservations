@@ -16,6 +16,7 @@ var reviews = require('./routes/reviews');
 var test = require('./routes/test');
 var search = require('./routes/search');
 var makebooking=require('./routes/makebooking');
+var getrestaurants=require('./routes/getrestaurants');
 
 var app = express();
 
@@ -47,6 +48,7 @@ app.use('/deletereview', reviews.remove);
 app.use('/test', test.test);
 app.use('/search', search.search);
 app.use('/newbooking', makebooking.newbooking);
+app.use('/getrestaurants', getrestaurants.getrestaurants);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
