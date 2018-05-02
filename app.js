@@ -40,6 +40,7 @@ app.use(session({
 app.use('/', index);
 app.use('/users', users);
 app.use('/signin', signin.login);
+app.use('/signout', signin.signout);
 app.use('/signup', signup.signup);
 app.use('/addreview', reviews.add);
 app.use('/allreviews', reviews.display);

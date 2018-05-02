@@ -34,6 +34,29 @@ p {
 .navbar-brand {
   font-size: 31px; }
 
+.navbar-light .navbar-brand {
+  color: #fff; }
+  .navbar-light .navbar-brand:hover {
+    color: #fff; }
+
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #fff; }
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #fff; }
+
+.navbar-light .navbar-nav .nav-link {
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff; }
+  .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #fff;
+    outline: none; }
+
+.navbar-light .navbar-toggler {
+  color: #fff;
+  border-color: #fff; }
+
 @media (max-width: 992px) {
   .navbar-nav {
     padding: 7px 20px; } }
@@ -148,6 +171,11 @@ p {
     .btn-form {
       width: 100%;
       border-radius: 3px; } }
+
+.btn-form[disabled]{
+  background-color: #D5D5D5;
+  color: #656565;
+}
 
 .search-icon {
   font-size: 15px;
