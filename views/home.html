@@ -265,6 +265,11 @@ $('input[type=text]').keyup(function() {
                      data: formData,
                        type: 'POST',
                        success: function (data) {
+                         if(data[0] == false){
+                             alert("No Resturants found with name:" +formData.restaurant_name);
+                             top.location.href = './home.html';
+                         }
+                         else{
 
                            resultarr2+='<section class="reserve-block">';
                             resultarr2+=' <div class="container">';
@@ -310,7 +315,7 @@ $('input[type=text]').keyup(function() {
                          var showtab=document.getElementById("tabs-1");
                          showtab.style.display="block";
 
-                       },
+                       }},
                        error: function (xhr, status, error) {
                            console.log('Error: ' + error.message);
                          },

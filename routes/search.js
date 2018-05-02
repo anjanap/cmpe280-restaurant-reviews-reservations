@@ -14,10 +14,13 @@ function search(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("cmpe280");
-        dbo.collection("restaurant_details").find({ restaurant_name: restaurant_name}).toArray(function(err, r_result) {
+        dbo.collection("restaurant_details").find({ restaurant_name: {$regex:restaurant_name, $options:'i'}}).toArray(function(err, r_result) {
             if (err) throw err;
-            if(r_result.length == 0)
-                res.send("No restaurants found!");
+            if(r_result.length == 0) {
+                a = false;
+                final.push(a);
+                res.send(final);
+            }
             else {
                 var r_id = r_result[0]._id + "";
                 req.session.restaurantid = r_id;
