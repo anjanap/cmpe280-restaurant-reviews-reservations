@@ -14,7 +14,7 @@ function search(req, res) {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("cmpe280");
-        dbo.collection("restaurant_details").find({ restaurant_name: restaurant_name}).toArray(function(err, r_result) {
+        dbo.collection("restaurant_details").find({ restaurant_name: {$regex:restaurant_name, $options:'i'}}).toArray(function(err, r_result) {
             if (err) throw err;
             if(r_result.length == 0) {
                 a = false;
