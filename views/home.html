@@ -43,6 +43,23 @@ $('input[type=text]').keyup(function() {
 
 
 
+    <script>
+
+        function  signout() {
+
+            {
+                $.ajax({
+                    url: 'http://localhost:3000/signout',
+                    type: 'POST',
+                    jsonpCallback: 'callback',
+                    success: function () {
+                        top.location.href = './index.html';
+                    },
+                    error: function (xhr, status, error) {
+                        console.log('Error: ' + error.message);
+                    }
+                });
+            }}
     </script>
 
     <style>
@@ -304,7 +321,7 @@ $('input[type=text]').keyup(function() {
                                   <li class="nav-item">
                                       <a class="nav-link" href="#">Blog</a>
                                   </li>
-                                  <li><a href="#" onclick="document.getElementById('id01').style.display='block'" class="btn btn-outline-light top-btn">Logout</a></li>
+                                  <li><a href="#" onclick="signout()" class="btn btn-outline-light top-btn">Logout</a></li>
                               </ul>
                           </div>
                       </nav>
