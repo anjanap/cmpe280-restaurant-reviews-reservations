@@ -449,3 +449,52 @@ footer {
   .address .featured-open {
     font-size: 13px;
     padding: 0 0 0 34px; }
+
+
+/*Tabs Style Sheet*/
+#tabs-1{font-size: 14px; width: 80%;left:-10px}
+.ui-tabs .ui-tabs-nav
+{
+  background: #ffffff;
+}
+
+.ui-tabs {
+  position: absolute;
+  padding: .2em;
+  left: 30px;
+  width: 95%;
+  height: auto;
+  top: 13%;
+}
+
+#tabs-1 .ui-tabs-nav {
+  height: 2.60em;
+  text-align: center;
+  width:100%;
+  right: 43px;
+}
+#tabs-1 .ui-tabs-nav li {
+  display: inline-block;
+  float: none;
+  top: 0px;
+  margin: 0em;
+  width: 48%;
+  padding-bottom: 0px;
+}
+.container ui-tabs ui-widget ui-widget-content ui-corner-all{
+  margin-left: -10px;
+}
+.ui-widget-header {
+  border: 1px solid #ffffff;
+  color: #ff3a6d;
+  font-weight: bold;
+}
+
+
+.ui-tabs .ui-tabs-panel{
+  background:#ff3a6d;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor{
+  width:390px;
+}
+/*Tabs Style Sheet*/  
