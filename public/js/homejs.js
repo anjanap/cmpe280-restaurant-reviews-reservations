@@ -63,7 +63,7 @@ function MyAjaxFunction(a){
 }//Button Search Ajax call
 
 
-
+//Ajax call for getting all restaurants.
 $(document).ready(function() {
     var resultarr='';
     var resultarr1='';
@@ -79,7 +79,7 @@ $(document).ready(function() {
                 var abc = "abc"
                 resultarr+='<div class="featured-place-wrap">';
                 resultarr+="<button onclick='MyAjaxFunction(\""+ data[i].restaurant_name + "\");'>";
-                resultarr+='<img src="images/featured11.jpg" class="img-fluid" alt="#">';
+                resultarr+='<img src='+data[i].img+' class="img-fluid" alt="#">';
                 resultarr+='<span class="featured-rating-green">' + data[i].rating + '</span>';
                 resultarr+='<div class="featured-title-box">';
                 resultarr+='<h6>' + data[i].restaurant_name + '</h6>';
@@ -97,7 +97,7 @@ $(document).ready(function() {
             for(var i = data.length/2; i<data.length; i++){
                 resultarr1+='<div class="featured-place-wrap">';
                 resultarr1+="<button onclick='MyAjaxFunction(\""+ data[i].restaurant_name + "\");'>";
-                resultarr1+='<img src="images/featured11.jpg" class="img-fluid" alt="#">';
+                resultarr1+='<img src='+data[i].img+' class="img-fluid" alt="#">';
                 resultarr1+='<span class="featured-rating-green">' + data[i].rating + '</span>';
                 resultarr1+='<div class="featured-title-box">';
                 resultarr1+='<h6>' + data[i].restaurant_name + '</h6>';
@@ -247,7 +247,3 @@ $(document).ready(function() {
         }
     });
 });//search button disabled if search bar is empty
-
-
-
-
