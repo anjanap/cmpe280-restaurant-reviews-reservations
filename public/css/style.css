@@ -16,9 +16,7 @@ p {
 .dark-bg {
   background: #252a33; }
 
-/* ==============================================================
-   HEADER
-   ============================================================== */
+/*  HEADER  */
 .nav-menu {
   position: absolute;
   z-index: 1;
@@ -35,29 +33,6 @@ p {
 
 .navbar-brand {
   font-size: 31px; }
-
-.navbar-light .navbar-brand {
-  color: #fff; }
-  .navbar-light .navbar-brand:hover {
-    color: #fff; }
-
-.navbar-light .navbar-nav .show > .nav-link {
-  color: #fff; }
-
-.navbar-light .navbar-nav .active > .nav-link {
-  color: #fff; }
-
-.navbar-light .navbar-nav .nav-link {
-  font-size: 16px;
-  font-weight: 300;
-  color: #fff; }
-  .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-    color: #fff;
-    outline: none; }
-
-.navbar-light .navbar-toggler {
-  color: #fff;
-  border-color: #fff; }
 
 @media (max-width: 992px) {
   .navbar-nav {
@@ -178,30 +153,7 @@ p {
   font-size: 15px;
   padding-right: 10px; }
 
-.slider-link {
-  color: #909090;
-  margin: 45px 0 0;
-  font-size: 19px; }
-  @media (max-width: 480px) {
-    .slider-link {
-      margin: 18px 0 0; }
-      .slider-link a,
-      .slider-link span {
-        display: block; } }
-  .slider-link a {
-    color: #909090;
-    text-decoration: underline;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s; }
-    .slider-link a:hover {
-      color: #fff; }
-  .slider-link span {
-    padding: 0 18px; }
-
-/* ==============================================================
-   FIND PLACES
-   ============================================================== */
+/*  FIND PLACES  */
 .styled-heading {
   text-align: center;
   margin: 0 0 50px; }
@@ -224,9 +176,7 @@ p {
       transform: translateX(-50%); }
 
 
-/* ==============================================================
-   FEATURED PLACES
-   ============================================================== */
+/*  FEATURED PLACES  */
 .featured-place-wrap {
   background: #fff;
   margin: 0 0 30px;
@@ -315,9 +265,7 @@ p {
         margin: 0; }
 
 
-/* ==============================================================
-   FOOTER
-   ============================================================== */
+/*   FOOTER  */
 footer {
   position: relative; }
 
@@ -340,44 +288,6 @@ footer {
           opacity: 1;
           text-decoration: none; }
 
-/* ==============================================================
-   DETAIL PAGE
-   ============================================================== */
-.detail-filter-wrap {
-  padding: 17px 0;
-  border-bottom: 1px solid #e7e7e7; }
-  .detail-filter-wrap p {
-    font-size: 18px;
-    color: #3e434b;
-    font-weight: 300;
-    margin: 6px 0 0; }
-    .detail-filter-wrap p span {
-      font-weight: 500; }
-
-.detail-filter {
-  text-align: right; }
-  @media (max-width: 992px) {
-    .detail-filter {
-      text-align: left; } }
-  .detail-filter p {
-    font-weight: 300;
-    color: #3e434b;
-    font-size: 14px;
-    display: inline-block;
-    margin: 0 10px 0 0; }
-
-
-
-.filter-dropdown {
-  display: inline-block; }
-  .filter-dropdown select {
-    border-radius: 0; }
-
-.detail-checkbox-wrap {
-  padding: 22px 0; }
-
-.detail-options-wrap {
-  padding: 15px 0; }
 
 @media (max-width: 992px) {
   .responsive-wrap {
@@ -387,9 +297,7 @@ footer {
     -ms-flex: 100%;
     flex: 100%; } }
 
-/* ==============================================================
-   RESERVE A SEAT
-   ============================================================== */
+/*  RESERVE A SEAT  */
 .reserve-block {
   padding: 30px 0; }
   .reserve-block h5 {
@@ -416,22 +324,7 @@ footer {
   padding: 0 !important;
   margin: 0 !important; }
 
-.reserve-seat-block {
-  text-align: right; }
-  @media (max-width: 992px) {
-    .reserve-seat-block {
-      margin: 15px 0 0; } }
-  @media (max-width: 768px) {
-    .reserve-seat-block {
-      text-align: left; } }
-  @media (max-width: 576px) {
-    .reserve-seat-block {
-      text-align: center; } }
-
-
-/* ==============================================================
-   BOOKING DETAILS
-   ============================================================== */
+/*  BOOKING DETAILS */
 .booking-details_wrap {
   padding: 26px 0; }
 
