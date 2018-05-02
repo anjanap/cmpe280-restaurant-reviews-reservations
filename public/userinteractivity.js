@@ -37,11 +37,11 @@ function mouseOut1() {
 }
 
 function mouseOver2() {
-    document.getElementById("b3").style.background = "green";
+    document.getElementById("b3").style.background = "#DF0101";
 }
 
 function mouseOut2() {
-    document.getElementById("b3").style.background = '#f44336';
+    document.getElementById("b3").style.background = '#FE2E2E';
 }
 
 function mouseOver3() {
@@ -49,15 +49,15 @@ function mouseOver3() {
 }
 
 function mouseOut3() {
-    document.getElementById("b4").style.background = '#FF0000';
+    document.getElementById("b4").style.background = '#04B431';
 }
 
 function mouseOver4() {
-    document.getElementById("b5").style.background = "green";
+    document.getElementById("b5").style.background = "#DF0101";
 }
 
 function mouseOut4() {
-    document.getElementById("b5").style.background = '#f44336';
+    document.getElementById("b5").style.background = '#FE2E2E';
 }
 
 function mouseOver5() {
@@ -65,5 +65,5 @@ function mouseOver5() {
 }
 
 function mouseOut5() {
-    document.getElementById("b6").style.background = '#FF0000';
+    document.getElementById("b6").style.background = '#04B431';
 }

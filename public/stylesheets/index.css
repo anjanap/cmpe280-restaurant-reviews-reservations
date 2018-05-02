@@ -125,7 +125,7 @@ body{
     transform: translate(-50%, -50%);
 }
 
-//signup page
+
 
   * {box-sizing: border-box}
 /* Full-width input fields */
@@ -164,7 +164,7 @@ button1 {
 /* Extra styles for the cancel button */
 .cancelbtn {
     padding: 14px 20px;
-    background-color: #f44336;
+    background-color: #FE2E2E;
 }
 
 /* Float cancel and signup buttons and add an equal width */
