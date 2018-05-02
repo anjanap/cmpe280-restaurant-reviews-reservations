@@ -133,7 +133,6 @@ sjdfghjjsdf
       var showtab=document.getElementById("displaylist");
       showtab.style.display="none";
 
-
       var formData = {
       'restaurant_name': a
        };
@@ -143,6 +142,8 @@ sjdfghjjsdf
         data: formData,
           type: 'POST',
           success: function (data) {
+            var resultarr2='';
+      var resultarr3='';
               resultarr2+='<section class="reserve-block">';
                resultarr2+=' <div class="container">';
                    resultarr2+=' <div class="row">';
@@ -178,8 +179,9 @@ sjdfghjjsdf
                                    resultarr2+='  </div>';
                                    resultarr2+='</div>';
                                    resultarr2+='</section>';
-
+resultarr3+='<div class="styled-heading"> <br/><br/><br/> <h3>Give Review or Reserve a table </h3> </div>'
             document.getElementById("display2").innerHTML=resultarr2;
+            document.getElementById("display3").innerHTML=resultarr3;
             var showtab=document.getElementById("tabs-1");
             showtab.style.display="block";
 
@@ -253,6 +255,7 @@ sjdfghjjsdf
     var resultarr2 = '';
     var resultarr3 = '';
       $(document).ready(function() {
+
           $("#form")
               .submit(function(event) {
                 var showtab=document.getElementById("displaylist");
@@ -270,7 +273,8 @@ sjdfghjjsdf
                              top.location.href = './home.html';
                          }
                          else{
-
+                           var resultarr2='';
+                     var resultarr3='';
                            resultarr2+='<section class="reserve-block">';
                             resultarr2+=' <div class="container">';
                                 resultarr2+=' <div class="row">';
