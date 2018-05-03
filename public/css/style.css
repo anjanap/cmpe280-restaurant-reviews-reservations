@@ -98,6 +98,9 @@ p {
     .slider {
       min-height: 700px; } }
 
+      .btn-outline-light:hover {
+        color: #000; }
+
 .slider-title_box {
   text-align: center; }
   .slider-content_wrap h1 {
