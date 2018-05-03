@@ -49,7 +49,7 @@ function register_mongoose(req,res){
     var newUser = new User(item);
     var flag = newUser.save();
     //console.log(JSON.stringify(flag + "*********8");
-    res.render('../views/home.html');
+    res.render('../views/index.html');
 }
 //console.log(item);
 

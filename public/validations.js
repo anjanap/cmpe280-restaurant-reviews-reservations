@@ -18,7 +18,7 @@ function signupForm() {
         msg += "Email is required.\n"
     }
     if (pwd == "") {
-        msg += "Passowrd is required.\n"
+        msg += "Password is required.\n"
     }
     if (phn == "") {
         msg += "Phone number is required.\n"
@@ -27,13 +27,10 @@ function signupForm() {
         msg += "Phone number format should be (999) 999-9999.\n"
     }
     if (!regEm.test(em)) {
-        msg += "Email format incorrect.\n"
+        msg += "Email format incorrect should be xxx@xxx.xxx\n"
     }
     if (pwd.length < 6) {
-        msg += "Passowrd minimum length should be 6.\n"
-    }
-    if (pwd2.length < 6) {
-        msg += "Passwords do not match.\n"
+        msg += "Password's minimum length is 6 characters.\n"
     }
     if (pwd != pwd2)
         msg += "Passwords do not match.\n"
