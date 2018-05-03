@@ -256,6 +256,7 @@ p {
     white-space: nowrap;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
+    color:#424242;
     margin-bottom: 5px; }
   .featured-title-box p {
     color: #9fa9b9;
@@ -497,4 +498,4 @@ footer {
 .ui-tabs .ui-tabs-nav .ui-tabs-anchor{
   width:390px;
 }
-/*Tabs Style Sheet*/  
+/*Tabs Style Sheet*/

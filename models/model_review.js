@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 var reviewSchema = new Schema({
 	restaurantid: String,
     userid: String,
+		uname: String,
     Description: { type: String, required: true}
 },{collection:'reviews'});
 

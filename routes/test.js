@@ -17,11 +17,12 @@ function test(req,res){
     var review = req.body.review_list;
     var userid = req.session.userid;
     var rest_id = req.session.restaurantid;
-    //rest_id = rest_id + "";
+    var username = req.session.name;
     console.log(review);
     var item = {
         userid: userid,
         restaurantid: rest_id,
+        uname: username,
         Description: review
     };
     console.log(item);

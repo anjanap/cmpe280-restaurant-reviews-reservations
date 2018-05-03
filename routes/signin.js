@@ -16,7 +16,8 @@ function check_mongoose(req,res){
         if(result)
         {
             req.session.userid = result._id + "";
-            console.log(req.session.userid);
+            req.session.name = result.firstname+" "+result.lastname;
+            console.log(req.session.name);
             res.render('../views/home.html');
         }
         else {
@@ -39,4 +40,3 @@ function signout(req, res) {
 
 }
 exports.signout = signout;
-

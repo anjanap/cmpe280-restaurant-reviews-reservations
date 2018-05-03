@@ -35,7 +35,7 @@ function MyAjaxFunction(a){
             for(var j=1;j<data.length;j++){
                 resultarr2+='        <div class="customer-review_wrap">';
 
-                resultarr2+='              <p class="customer-text">'+data[j].Description+'</p>'
+                resultarr2+='     <p>'+data[j].uname+'</p><p class="customer-text">'+data[j].Description+'</p>'
                 resultarr2+='      </div>';
                 resultarr2+='        <hr>';
             }
@@ -169,7 +169,7 @@ $(document).ready(function() {
                         for(var j=1;j<data.length;j++){
                             resultarr2+='        <div class="customer-review_wrap">';
 
-                            resultarr2+='              <p class="customer-text">'+data[j].Description+'</p>'
+                            resultarr2+='    <p>'+data[j].uname+'</p><p class="customer-text">'+data[j].Description+'</p>'
                             resultarr2+='      </div>';
                             resultarr2+='        <hr>';
                         }
