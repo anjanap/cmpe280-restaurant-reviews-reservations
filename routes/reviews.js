@@ -17,7 +17,7 @@ function add(req,res){
     var newReview = new review_model(item);
     console.log(newReview + "HHHHHH") ;
     var flag = newReview.save();
-    res.render('../views/success.html');
+    res.send("haha");
 }
 // function add(req, res) {
 
