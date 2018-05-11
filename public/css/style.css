@@ -161,7 +161,7 @@ p {
   font-size: 15px;
   padding-right: 10px; }
 
-/*  FIND PLACES  */
+/*  search place */
 .styled-heading {
   text-align: center;
   margin: 0 0 50px; }
@@ -184,7 +184,7 @@ p {
       transform: translateX(-50%); }
 
 
-/*  FEATURED PLACES  */
+/*  featured places list  */
 .featured-place-wrap {
   background: #fff;
   margin: 0 0 30px;
@@ -275,7 +275,7 @@ footer {
     -ms-flex: 100%;
     flex: 100%; } }
 
-/*  RESERVE A SEAT  */
+
 .reserve-block {
   padding: 30px 0; }
   .reserve-block h5 {
@@ -302,7 +302,7 @@ footer {
   padding: 0 !important;
   margin: 0 !important; }
 
-/*  BOOKING DETAILS */
+
 .booking-details_wrap {
   padding: 26px 0; }
 

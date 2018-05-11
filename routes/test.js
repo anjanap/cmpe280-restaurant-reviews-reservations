@@ -44,7 +44,6 @@ function test(req,res){
                 res.send(final);
             }
             else {
-                console.log("its me baby" + r_result[0].restaurant_name);
                 res.render('../views/home.html');
             }
             db.close();
